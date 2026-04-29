@@ -1,0 +1,44 @@
+
+# Python environments
+.venv/
+.venv*/
+venv/
+env/
+.python-version
+
+# Secrets
+.env
+*/.env
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.streamlit/
+
+# Project outputs and logs
+Output/
+*.log
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated or heavy data
+data/raw/
+data/interim/
+data/processed/
+
+# Lightweight demo data only
+!data/sample/
+!data/sample/*.json
+!data/sample/*.yaml
+!data/sample/*.yml
+!data/sample/*.csv
