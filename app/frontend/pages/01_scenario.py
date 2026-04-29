@@ -48,7 +48,7 @@ delta_t = estimate_delta_t(fractions_intervention, fractions_initical)
 col1, col2 = st.columns(2) # dividing the screen into 2 columns: the left one for the metric and the right one for the cost
 
 with col1:
-    st.metric("Estimated Cooling/Heating (ΔT)", f"{delta_t} °C", delta = delta_t, delta_color = "normal" if delta_t < 0 else "inverse")
+    st.metric("Estimated (ΔT): Cooling (-) or Heating (+)", f"{delta_t} °C", delta = delta_t, delta_color = "normal" if delta_t < 0 else "inverse")
 
 with col2:
     cost_data = get_cost_summary(100000, intervention) # temporarlly, using fixed area of 100,000 m2 (10 hectares) for the demo
