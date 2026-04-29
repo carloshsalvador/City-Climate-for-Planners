@@ -1,3 +1,4 @@
+README.md
 pyproject.toml
 suews_mb.egg-info/PKG-INFO
 suews_mb.egg-info/SOURCES.txt

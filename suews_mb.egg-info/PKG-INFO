@@ -17,6 +17,7 @@ Requires-Dist: requests>=2.31
 Requires-Dist: pyyaml>=6.0
 Requires-Dist: watchdog>=6.0.0
 Requires-Dist: streamlit>=1.50.0
+Requires-Dist: Pillow>=10.0
 Provides-Extra: plot
 Requires-Dist: cartopy>=0.22; extra == "plot"
 Requires-Dist: matplotlib>=3.7; extra == "plot"
@@ -26,3 +27,20 @@ Requires-Dist: ruff>=0.4; extra == "dev"
 Provides-Extra: frontend
 Requires-Dist: plotly>=6.7.0; extra == "frontend"
 Requires-Dist: streamlit>=1.50.0; extra == "frontend"
+
+# City Climate for Planners
+
+Prototype Streamlit app for climate-aware urban planning.
+
+## Local run
+
+```bash
+streamlit run app/frontend/streamlit_app.py
+```
+
+## Deploy on Streamlit Community Cloud
+
+- Connect the GitHub repository.
+- Use `app/frontend/streamlit_app.py` as the main file.
+- Keep `requirements.txt` at the repository root.
+- Add secrets in the Streamlit Cloud dashboard if needed.
