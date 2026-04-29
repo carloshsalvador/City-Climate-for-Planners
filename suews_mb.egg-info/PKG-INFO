@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: suews-mb
+Version: 0.1.0
+Summary: Modern SUEWS urban climate modelling with meteoblue data integration
+License: proprietary
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: supy>=2026.1.28
+Requires-Dist: pydantic>=2.0
+Requires-Dist: pydantic-settings>=2.0
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: meteoblue-dataset-sdk>=1.2.0
+Requires-Dist: netCDF4>=1.6
+Requires-Dist: pandas>=2.0
+Requires-Dist: numpy>=2.0
+Requires-Dist: requests>=2.31
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: watchdog>=6.0.0
+Requires-Dist: streamlit>=1.50.0
+Provides-Extra: plot
+Requires-Dist: cartopy>=0.22; extra == "plot"
+Requires-Dist: matplotlib>=3.7; extra == "plot"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.4; extra == "dev"
+Provides-Extra: frontend
+Requires-Dist: plotly>=6.7.0; extra == "frontend"
+Requires-Dist: streamlit>=1.50.0; extra == "frontend"

@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "demo_mode": true,
+  "last_updated": "2026-04-27",
+  "supported_locations": ["Basel"],
+  "notes": "Data in this directory is for demonstration purposes and uses simplified linear approximations for the frontend prototype."
+}

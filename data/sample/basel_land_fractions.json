@@ -1,0 +1,17 @@
+{
+  "location": "Basel, Switzerland",
+  "coordinates": {
+    "lat": 47.5596,
+    "lon": 7.5886
+  },
+  "fractions": {
+    "paved": 0.45,
+    "buildings": 0.30,
+    "evergreen_trees": 0.05,
+    "deciduous_trees": 0.05,
+    "grass": 0.10,
+    "bare_soil": 0.04,
+    "water": 0.01
+  },
+  "description": "Baseline land use fractions for Basel city center (fictional demo data)."
+}

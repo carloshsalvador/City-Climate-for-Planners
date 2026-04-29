@@ -1,0 +1,16 @@
+{
+  "city": "Basel",
+  "baseline_year": 2023,
+  "metrics": {
+    "mean_annual_temp": 11.5,
+    "max_annual_temp": 36.2,
+    "hot_days": 18.0,
+    "tropical_nights": 8.0,
+    "summer_days": 45.0,
+    "heat_risk_class": "High"
+  },
+  "units": {
+    "temp": "°C",
+    "days": "days/year"
+  }
+}
