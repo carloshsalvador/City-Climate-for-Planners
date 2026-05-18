@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import os
 
 # --- PAGE CONFIG ---
 st.set_page_config(

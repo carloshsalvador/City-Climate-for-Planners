@@ -1,9 +1,5 @@
 import streamlit as st
 import pandas as pd
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 from app.api.data_loader import load_city_baseline
 from app.api.scenario import apply_intervention, estimate_delta_t
 from app.api.costs import get_cost_summary
