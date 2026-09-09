@@ -111,9 +111,6 @@ class BaselRc5Runtime:
         self.consequence_contract = self._load_json(
             self.manifest["operational_financial"]["consequence_contract_runtime_path"]
         )
-        self.golden_contract = self._load_json(
-            self.manifest["validation"]["golden_app_contract_runtime_path"]
-        )
 
         self._feature_ranges = self._read_feature_ranges()
         self._validate_manifest_contract()

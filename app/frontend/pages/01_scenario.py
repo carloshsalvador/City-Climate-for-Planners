@@ -1,14 +1,26 @@
 import streamlit as st
-import pandas as pd
-from app.api.data_loader import load_city_baseline
-from app.api.scenario import apply_intervention, estimate_delta_t
-from app.api.costs import get_cost_summary
+
+from app.frontend.basel_controls import (
+    default_financial_assumptions,
+    format_celsius,
+    format_chf,
+    format_m2,
+    format_m3,
+    grass_percent_to_irrfrac,
+    paved_albedo_for_cm3,
+)
+from app.runtime import (
+    BaselRc5CompatibilityError,
+    BaselRc5InputError,
+    BaselRc5Runtime,
+    BaselRc5RuntimeError,
+)
 
 
-st.set_page_config(page_title="Scenario Configuration", page_icon="🌳", layout="wide")
+st.set_page_config(page_title="Basel rc5 Scenario", page_icon="app/frontend/assets/logo.png", layout="wide")
 
-# Re-apply some basic styling for consistency (in a real app, this would be a shared module)
-st.markdown("""
+st.markdown(
+    """
     <style>
     .main-title {
         background: linear-gradient(90deg, #38bdf8, #818cf8);
@@ -18,63 +30,149 @@ st.markdown("""
         font-weight: 700;
     }
     </style>
-    """, unsafe_allow_html=True)
-
-st.markdown('<h1 class="main-title">🌳 Urban Intervention Scenario</h1>', unsafe_allow_html=True)
-
-st.write("Modify the land cover fractions below to simulate urban interventions.")
-# 
-# Load demo data (hardcoded for now, will use data_loader.py later)
-# initial_fractions = {
-#     "Paved": 0.45,
-#     "Buildings": 0.30,
-#     "Green Space": 0.20,
-#     "Water": 0.05
-# }
-fractions_baseline = load_city_baseline("basel") # Pydantic model. Access values like baseline_data.paved, etc.
-fractions_initical = fractions_baseline.fractions
+    """,
+    unsafe_allow_html=True,
+)
 
 
-st.sidebar.header("Intervention")
-intervention = st.sidebar.slider("Increase in Green Space (%)", 0, 50, 10)/100
+@st.cache_resource
+def get_basel_runtime() -> BaselRc5Runtime:
+    return BaselRc5Runtime()
 
-fractions_intervention = apply_intervention(fractions_initical, intervention)
-delta_t = estimate_delta_t(fractions_intervention, fractions_initical)
 
-col1, col2 = st.columns(2) # dividing the screen into 2 columns: the left one for the metric and the right one for the cost
+st.markdown('<h1 class="main-title">Basel rc5 Intervention Scenario</h1>', unsafe_allow_html=True)
+st.info(
+    "Cooling estimates use surrogate models calibrated for the fixed Basel rc5 scientific "
+    "context. Site-specific predictions for other geometries or cities require local "
+    "simulation and validation."
+)
 
+try:
+    runtime = get_basel_runtime()
+except BaselRc5CompatibilityError as exc:
+    st.error(f"Basel rc5 runtime compatibility error: {exc}")
+    st.stop()
+except BaselRc5RuntimeError as exc:
+    st.error(f"Basel rc5 runtime could not initialize: {exc}")
+    st.stop()
+
+defaults = default_financial_assumptions(runtime)
+
+st.sidebar.header("Basel rc5 interventions")
+grass_percent = st.sidebar.slider(
+    "Irrigated grass fraction",
+    min_value=0,
+    max_value=100,
+    value=0,
+    step=1,
+    format="%d %%",
+)
+cm3_enabled = st.sidebar.toggle("Street whitening / CM3", value=False)
+
+if cm3_enabled:
+    selected_paved_albedo = st.sidebar.slider(
+        "Target paved albedo",
+        min_value=0.10,
+        max_value=0.87,
+        value=0.87,
+        step=0.01,
+    )
+else:
+    selected_paved_albedo = 0.10
+    st.sidebar.caption("CM3 off: target paved albedo fixed at the Basel baseline value 0.10.")
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Financial assumptions, not validated universal market prices.")
+water_unit_cost = st.sidebar.number_input(
+    "Water unit cost [CHF/m3]",
+    min_value=0.0,
+    value=defaults["water_unit_cost_chf_m3"],
+    step=0.01,
+)
+whitening_unit_cost = st.sidebar.number_input(
+    "Street whitening unit cost [CHF/m2]",
+    min_value=0.0,
+    value=defaults["whitening_unit_cost_chf_m2"],
+    step=0.10,
+)
+
+grass_irrfrac = grass_percent_to_irrfrac(grass_percent)
+paved_albedo = paved_albedo_for_cm3(
+    cm3_enabled=cm3_enabled,
+    selected_paved_albedo=selected_paved_albedo,
+)
+
+try:
+    result = runtime.evaluate(
+        grass_irrfrac=grass_irrfrac,
+        paved_albedo=paved_albedo,
+        cm3_enabled=cm3_enabled,
+        water_unit_cost_chf_m3=water_unit_cost,
+        whitening_unit_cost_chf_m2=whitening_unit_cost,
+    )
+except BaselRc5InputError as exc:
+    st.error(f"Scenario input is outside the validated Basel rc5 domain: {exc}")
+    st.stop()
+except BaselRc5RuntimeError as exc:
+    st.error(f"Basel rc5 inference failed: {exc}")
+    st.stop()
+
+col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.metric("Estimated (ΔT): Cooling (-) or Heating (+)", f"{delta_t} °C", delta = delta_t, delta_color = "normal" if delta_t < 0 else "inverse")
-
+    st.metric("Annual cooling", format_celsius(result.planner.annual_cooling))
 with col2:
-    cost_data = get_cost_summary(100000, intervention) # temporarlly, using fixed area of 100,000 m2 (10 hectares) for the demo
-    cost_formatted = f"€ {cost_data['total_cost']:,.0f}"
-    st.metric("Estimated Intervention Cost", cost_formatted, delta=f"{cost_data['area_affected_m2']:,.0f} m² modified", delta_color="off")
+    st.metric("Warm-season daytime cooling", format_celsius(result.planner.warm_day_cooling))
+with col3:
+    st.metric("Warm-season nighttime cooling", format_celsius(result.planner.warm_night_cooling))
+with col4:
+    st.metric("Total variable cost", format_chf(result.financial.total_variable_cost_chf))
 
+st.markdown("---")
 
+left_col, right_col = st.columns(2)
+with left_col:
+    st.subheader("Scenario Inputs")
+    st.write(
+        {
+            "Irrigated grass fraction": f"{grass_percent} %",
+            "Street whitening / CM3": "On" if cm3_enabled else "Off",
+            "Effective target paved albedo": f"{paved_albedo:.2f}",
+            "Water unit cost": f"{format_chf(water_unit_cost)}/m3",
+            "Street whitening unit cost": f"{format_chf(whitening_unit_cost)}/m2",
+        }
+    )
 
-def get_plot_data(f):
-    paved = (f.paved + f.bare_soil)*100
-    buildings = f.buildings*100
-    green = (f.deciduous_trees + f.evergreen_trees + f.grass)*100
-    water = f.water*100
-    landcover_list = [paved, buildings, green, water]
-    return landcover_list
+with right_col:
+    st.subheader("Basel rc5 Runtime")
+    st.write(
+        {
+            "City": result.metadata.city,
+            "Bundle version": result.metadata.bundle_version,
+            "Training context": result.metadata.training_context_id,
+            "Source run": result.metadata.source_run,
+        }
+    )
 
+with st.expander("Operational details", expanded=False):
+    irr_col, cm3_col = st.columns(2)
+    with irr_col:
+        st.markdown("#### Irrigation")
+        st.metric("Irrigation demand", f"{result.operational.irrigation_mm:.3f} mm")
+        st.metric("Water volume", format_m3(result.operational.water_volume_m3))
+        st.metric("Irrigation cost", format_chf(result.financial.irrigation_cost_chf))
+    with cm3_col:
+        st.markdown("#### Street whitening")
+        st.metric("Whitened paved area", format_m2(result.operational.whitening_area_m2))
+        st.metric("Whitening cost", format_chf(result.financial.whitening_cost_chf))
 
+with st.expander("Scientific outputs", expanded=False):
+    st.write(
+        {
+            "Annual Delta T2 [degC]": result.scientific.annual_delta_t2,
+            "Warm-season daytime Delta T2 [degC]": result.scientific.warm_day_delta_t2,
+            "Warm-season nighttime Delta T2 [degC]": result.scientific.warm_night_delta_t2,
+            "Raw irrigation [mm]": result.scientific.irrigation_raw_mm,
+        }
+    )
 
-# Display comparison
-st.subheader("Comparison: Baseline vs. Scenario")
-
-data = {
-    "Type": ["Paved", "Buildings", "Green Space", "Water"],
-    "Baseline (%)": get_plot_data(fractions_initical),
-    "Scenario (%)": get_plot_data(fractions_intervention),
-}
-
-
-df = pd.DataFrame(data)
-
-st.table(df)
-
-st.success("✨ Scenario Logic and Cost Estimation fully integrated!")
+st.caption(result.metadata.applicability_statement)
