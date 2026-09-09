@@ -1,0 +1,78 @@
+{
+  "city": {
+    "classification": "canonical_label",
+    "provenance_status": "supported_by_earlier_Basel_workflow_and_site_context_docs",
+    "source_path": "Documentation/doc_t2.ipynb; site_context/README.md",
+    "unit": null,
+    "value": "Basel"
+  },
+  "context_id": "basel_rc5_fixed_training_context_v1",
+  "context_type": "fixed_surrogate_training_context",
+  "latitude": {
+    "classification": "provisional_context_coordinate",
+    "provenance_status": "verified_as_Basel_candidate_coordinate_not_found_in_rc5_runtime_audit",
+    "source_path": "Documentation/doc_t2.ipynb; site_context/README.md",
+    "unit": "degrees_north",
+    "value": 47.5596
+  },
+  "longitude": {
+    "classification": "provisional_context_coordinate",
+    "provenance_status": "verified_as_Basel_candidate_coordinate_not_found_in_rc5_runtime_audit",
+    "source_path": "Documentation/doc_t2.ipynb; site_context/README.md",
+    "unit": "degrees_east",
+    "value": 7.5886
+  },
+  "not_dynamic_site_context": true,
+  "operational_context_rule": "Dynamic SuewsSiteContext outputs belong to future App v2 site preparation and must not replace this fixed rc5 context during Basel surrogate inference or coupled operational consequence calculations.",
+  "paved_fraction": {
+    "classification": "canonical_fixed_training_context_quantity",
+    "provenance_status": "canonical_runtime_audit",
+    "source_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/batch/scenario_audits/ANC_BASELINE_runtime.csv",
+    "unit": "fraction",
+    "value": 0.3640046979865772
+  },
+  "simulation_period": {
+    "classification": "canonical",
+    "end_time": "2023-12-31 23:00:00",
+    "provenance_status": "canonical_runtime_audit",
+    "source_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/batch/scenario_audits/ANC_BASELINE_runtime.csv",
+    "start_time": "2023-01-01 00:00:00",
+    "unit": "local/inherited SUEWS timestamp convention"
+  },
+  "site_area_m2": {
+    "classification": "provisional_fixed_training_context_quantity",
+    "provenance_status": "current_SUEWS_config_value; BA Phase 4B marks volume conversion as pending canonical model-grid area",
+    "source_path": "config_suews.yml",
+    "unit": "m2",
+    "value": 785000.0
+  },
+  "source_hashes": {
+    "baseline_runtime_audit_sha256": "dfe138947603aca97ac2defe287837998e709c3e49714d583aab90e0d9fc9ce3",
+    "config_suews_sha256": "affc773e4fa4ccb8a5286f798c288f6da4044afad999e47399b6059beba66da1",
+    "final_consequence_dataset_sha256": "1d45646b5731254c515bed19154a055530a172db53c6776d231c65d8824b3d88"
+  },
+  "source_run": {
+    "classification": "canonical",
+    "provenance_status": "canonical",
+    "source_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/config/run_provenance.json",
+    "unit": null,
+    "value": "c02_albedo_000_087_n60_rc5"
+  },
+  "spatial_configuration": {
+    "config_lat_lng_note": {
+      "classification": "unresolved",
+      "provenance_status": "conflicting_coordinate_provenance",
+      "source_path": "config_suews.yml; Documentation/doc_t2.ipynb",
+      "unit": null,
+      "value": "config_suews.yml currently contains lat=51.51 and lng=-0.12 while earlier Basel workflow docs contain 47.5596 and 7.5886."
+    },
+    "radius_or_geometry_mode": {
+      "classification": "unresolved",
+      "provenance_status": "not resolved in rc5 artefacts inspected",
+      "source_path": null,
+      "unit": null,
+      "value": null
+    }
+  },
+  "surrogate_mapping": "Y = f(grass_irrfrac, paved_albedo | fixed Basel rc5 context)"
+}

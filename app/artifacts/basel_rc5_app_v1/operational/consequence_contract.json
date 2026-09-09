@@ -1,0 +1,39 @@
+{
+  "contract_version": "app_v2_operational_financial_v1",
+  "financial": {
+    "cm3_cost_independent_of_paved_albedo": true,
+    "irrigation_cost_chf": "water_volume_m3 * water_unit_cost_chf_m3",
+    "total_variable_cost_chf": "irrigation_cost_chf + whitening_cost_chf",
+    "whitening_cost_chf": "whitening_area_m2 * whitening_unit_cost_chf_m2"
+  },
+  "implemented_by": "app.api.consequences.build_basel_consequence_contract",
+  "operational": {
+    "baseline_override": {
+      "cm3_enabled": false,
+      "grass_irrfrac": 0.0,
+      "irrigation_cost_chf": 0.0,
+      "irrigation_mm": 0.0,
+      "paved_albedo": 0.1,
+      "water_volume_m3": 0.0
+    },
+    "irrigation_mm": "max(0, irrigation_raw_mm), except exact canonical baseline resolves to 0",
+    "spatial_basis": "fixed rc5 training context, not dynamic SuewsSiteContext",
+    "water_volume_m3": "irrigation_mm * rc5_training_context.site_area_m2 / 1000",
+    "whitening_area_m2": "site_area_m2 * paved_fraction if cm3_enabled else 0"
+  },
+  "planner": {
+    "annual_cooling": "-annual_delta_t2",
+    "warm_day_cooling": "-warm_day_delta_t2",
+    "warm_night_cooling": "-warm_night_delta_t2"
+  },
+  "requires_streamlit": false,
+  "scientific": {
+    "delta_t2_definition": "scenario T2 - baseline T2",
+    "preserved_fields": [
+      "annual_delta_t2",
+      "warm_day_delta_t2",
+      "warm_night_delta_t2",
+      "irrigation_raw_mm"
+    ]
+  }
+}

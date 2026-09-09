@@ -1,0 +1,425 @@
+{
+  "applicability": {
+    "basel_rc5_only": true,
+    "dynamic_site_context_incompatibility": "Dynamic SuewsSiteContext outputs must not be fed into this bundle as replacement spatial context; a new validated context requires its own surrogate artefact.",
+    "feature_domain_constraints": [
+      {
+        "feature": "grass_irrfrac",
+        "max": 1.0,
+        "min": 0.0
+      },
+      {
+        "feature": "paved_albedo",
+        "max": 0.87,
+        "min": 0.0
+      }
+    ],
+    "statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+    "surrogate_mapping": "Y = f(grass_irrfrac, paved_albedo | fixed Basel rc5 context)"
+  },
+  "bundle": {
+    "city": "Basel",
+    "created_at_utc": "2026-09-08T12:59:44.217912+00:00",
+    "name": "basel_rc5_app_v2_scientific_runtime",
+    "source_dataset_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/final/final_consequence_dataset.csv",
+    "source_dataset_sha256": "1d45646b5731254c515bed19154a055530a172db53c6776d231c65d8824b3d88",
+    "source_run": "c02_albedo_000_087_n60_rc5",
+    "version": "basel_rc5_app_v1"
+  },
+  "hashes": {
+    "financial/cost_defaults.json": "e7b7e10da1da1ca32ca49137e91f6a503a861ccf6d4e325cf0fda4db83483947",
+    "models/portable/annual_mean_delta_t2.joblib": "a142375cd6e4983b5b4ff9f91ce9274a25c8b49b8c7e6b1a5c30f574b9fc4ec6",
+    "models/portable/cumulative_irrigation.joblib": "ffa373319c96a01852e496cada946d21b920e9535479a3d555ab8638e2479a29",
+    "models/portable/warm_season_daytime_mean_delta_t2.joblib": "0da548ccd31afb4acb5b9c83e7421165ccc2f52bd6fa6bea6a56b5c43040dd28",
+    "models/portable/warm_season_nighttime_mean_delta_t2.joblib": "069a845f005cebb72d37850addf6bcded1320d885ed4e8a672c17cb2c14e9f1b",
+    "operational/consequence_contract.json": "58765f3b46ccf66f7eca4053f9fd900ef3b3ca07eb872b89ff0112a4855f8e31",
+    "training_context/rc5_context.json": "2eb9c65ba8c8c1731b4f863b746ff8be05aff4c5b716dfca60c1cf65ca27d561",
+    "validation/golden_app_contract.json": "5e8101bca5e5aa967ac86b1587960c87d00914c88adcf40c53908d2bcd9670de",
+    "validation/golden_predictions.csv": "af17401289235c756996df305888a12e9d0d22d13f3dfc9e218133cb5275ef61"
+  },
+  "models": [
+    {
+      "conversion": {
+        "hyperparameters_reoptimized": false,
+        "refitted": false,
+        "strategy": "deepcopy fitted scaler_ and regressor_ into sklearn Pipeline"
+      },
+      "feature_order": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "feature_ranges": [
+        {
+          "actual_training_max": 1.0,
+          "actual_training_min": 0.0,
+          "baseline": 0.0,
+          "feature": "grass_irrfrac",
+          "training_max": 1.0,
+          "training_min": 0.0,
+          "unit": "fraction"
+        },
+        {
+          "actual_training_max": 0.87,
+          "actual_training_min": 0.0,
+          "baseline": 0.1,
+          "feature": "paved_albedo",
+          "training_max": 0.87,
+          "training_min": 0.0,
+          "unit": "fraction"
+        }
+      ],
+      "features": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "fitted_kernel": "31.6**2 * Matern(length_scale=[10.3, 300], nu=1.5) + WhiteKernel(noise_level=1e-08)",
+      "model_family": "Gaussian Process Regressor",
+      "model_sha256": "a142375cd6e4983b5b4ff9f91ce9274a25c8b49b8c7e6b1a5c30f574b9fc4ec6",
+      "parity": {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "annual_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      "preprocessing": {
+        "gpr_normalize_y": true,
+        "x_scaler": "sklearn.preprocessing.StandardScaler",
+        "x_scaler_mean": [
+          0.49226547098938395,
+          0.4323876293109598
+        ],
+        "x_scaler_scale": [
+          0.3052774373347895,
+          0.2589021882502182
+        ]
+      },
+      "runtime_class": "sklearn.pipeline.Pipeline",
+      "runtime_path": "models/portable/annual_mean_delta_t2.joblib",
+      "runtime_steps": [
+        "sklearn.preprocessing.StandardScaler",
+        "sklearn.gaussian_process.GaussianProcessRegressor"
+      ],
+      "scientific_sign_convention": "Delta T2 = scenario T2 - baseline T2",
+      "source_model_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/final/models/annual_mean_delta_t2.joblib",
+      "source_model_sha256": "c9810adca68547847d6ba6994a904e75b133cf58504c3a6793e1ea1d6bd29b53",
+      "source_runtime_class": "analysis.surrogate.ScaledGaussianProcessRegressor",
+      "target": "annual_mean_delta_t2",
+      "target_unit": "degC"
+    },
+    {
+      "conversion": {
+        "hyperparameters_reoptimized": false,
+        "refitted": false,
+        "strategy": "deepcopy fitted scaler_ and regressor_ into sklearn Pipeline"
+      },
+      "feature_order": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "feature_ranges": [
+        {
+          "actual_training_max": 1.0,
+          "actual_training_min": 0.0,
+          "baseline": 0.0,
+          "feature": "grass_irrfrac",
+          "training_max": 1.0,
+          "training_min": 0.0,
+          "unit": "fraction"
+        },
+        {
+          "actual_training_max": 0.87,
+          "actual_training_min": 0.0,
+          "baseline": 0.1,
+          "feature": "paved_albedo",
+          "training_max": 0.87,
+          "training_min": 0.0,
+          "unit": "fraction"
+        }
+      ],
+      "features": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "fitted_kernel": "31.6**2 * Matern(length_scale=[13.9, 253], nu=1.5) + WhiteKernel(noise_level=1e-08)",
+      "model_family": "Gaussian Process Regressor",
+      "model_sha256": "0da548ccd31afb4acb5b9c83e7421165ccc2f52bd6fa6bea6a56b5c43040dd28",
+      "parity": {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "warm_season_daytime_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      "preprocessing": {
+        "gpr_normalize_y": true,
+        "x_scaler": "sklearn.preprocessing.StandardScaler",
+        "x_scaler_mean": [
+          0.49226547098938395,
+          0.4323876293109598
+        ],
+        "x_scaler_scale": [
+          0.3052774373347895,
+          0.2589021882502182
+        ]
+      },
+      "runtime_class": "sklearn.pipeline.Pipeline",
+      "runtime_path": "models/portable/warm_season_daytime_mean_delta_t2.joblib",
+      "runtime_steps": [
+        "sklearn.preprocessing.StandardScaler",
+        "sklearn.gaussian_process.GaussianProcessRegressor"
+      ],
+      "scientific_sign_convention": "Delta T2 = scenario T2 - baseline T2",
+      "source_model_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/final/models/warm_season_daytime_mean_delta_t2.joblib",
+      "source_model_sha256": "d9fb894883b5a523c758655dd33e9ba5c0eaaa604d542604fca9674637386ced",
+      "source_runtime_class": "analysis.surrogate.ScaledGaussianProcessRegressor",
+      "target": "warm_season_daytime_mean_delta_t2",
+      "target_unit": "degC"
+    },
+    {
+      "conversion": {
+        "hyperparameters_reoptimized": false,
+        "refitted": false,
+        "strategy": "deepcopy fitted scaler_ and regressor_ into sklearn Pipeline"
+      },
+      "feature_order": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "feature_ranges": [
+        {
+          "actual_training_max": 1.0,
+          "actual_training_min": 0.0,
+          "baseline": 0.0,
+          "feature": "grass_irrfrac",
+          "training_max": 1.0,
+          "training_min": 0.0,
+          "unit": "fraction"
+        },
+        {
+          "actual_training_max": 0.87,
+          "actual_training_min": 0.0,
+          "baseline": 0.1,
+          "feature": "paved_albedo",
+          "training_max": 0.87,
+          "training_min": 0.0,
+          "unit": "fraction"
+        }
+      ],
+      "features": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "fitted_kernel": "31.6**2 * Matern(length_scale=[5.65, 656], nu=1.5) + WhiteKernel(noise_level=1e-08)",
+      "model_family": "Gaussian Process Regressor",
+      "model_sha256": "069a845f005cebb72d37850addf6bcded1320d885ed4e8a672c17cb2c14e9f1b",
+      "parity": {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "warm_season_nighttime_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      "preprocessing": {
+        "gpr_normalize_y": true,
+        "x_scaler": "sklearn.preprocessing.StandardScaler",
+        "x_scaler_mean": [
+          0.49226547098938395,
+          0.4323876293109598
+        ],
+        "x_scaler_scale": [
+          0.3052774373347895,
+          0.2589021882502182
+        ]
+      },
+      "runtime_class": "sklearn.pipeline.Pipeline",
+      "runtime_path": "models/portable/warm_season_nighttime_mean_delta_t2.joblib",
+      "runtime_steps": [
+        "sklearn.preprocessing.StandardScaler",
+        "sklearn.gaussian_process.GaussianProcessRegressor"
+      ],
+      "scientific_sign_convention": "Delta T2 = scenario T2 - baseline T2",
+      "source_model_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/final/models/warm_season_nighttime_mean_delta_t2.joblib",
+      "source_model_sha256": "183ec48c8c5c9e5b028fcf7e245d03f38e7b85f20d9991db41c44c6d02e2f152",
+      "source_runtime_class": "analysis.surrogate.ScaledGaussianProcessRegressor",
+      "target": "warm_season_nighttime_mean_delta_t2",
+      "target_unit": "degC"
+    },
+    {
+      "conversion": {
+        "hyperparameters_reoptimized": false,
+        "refitted": false,
+        "strategy": "deepcopy fitted scaler_ and regressor_ into sklearn Pipeline"
+      },
+      "feature_order": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "feature_ranges": [
+        {
+          "actual_training_max": 1.0,
+          "actual_training_min": 0.0,
+          "baseline": 0.0,
+          "feature": "grass_irrfrac",
+          "training_max": 1.0,
+          "training_min": 0.0,
+          "unit": "fraction"
+        },
+        {
+          "actual_training_max": 0.87,
+          "actual_training_min": 0.0,
+          "baseline": 0.1,
+          "feature": "paved_albedo",
+          "training_max": 0.87,
+          "training_min": 0.0,
+          "unit": "fraction"
+        }
+      ],
+      "features": [
+        "grass_irrfrac",
+        "paved_albedo"
+      ],
+      "fitted_kernel": "8.46**2 * Matern(length_scale=[9.35, 1e+03], nu=1.5) + WhiteKernel(noise_level=1e-08)",
+      "model_family": "Gaussian Process Regressor",
+      "model_sha256": "ffa373319c96a01852e496cada946d21b920e9535479a3d555ab8638e2479a29",
+      "parity": {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "irr_total_raw",
+        "tolerance": 1e-12
+      },
+      "preprocessing": {
+        "gpr_normalize_y": true,
+        "x_scaler": "sklearn.preprocessing.StandardScaler",
+        "x_scaler_mean": [
+          0.49226547098938395,
+          0.4323876293109598
+        ],
+        "x_scaler_scale": [
+          0.3052774373347895,
+          0.2589021882502182
+        ]
+      },
+      "runtime_class": "sklearn.pipeline.Pipeline",
+      "runtime_path": "models/portable/cumulative_irrigation.joblib",
+      "runtime_steps": [
+        "sklearn.preprocessing.StandardScaler",
+        "sklearn.gaussian_process.GaussianProcessRegressor"
+      ],
+      "scientific_sign_convention": "raw cumulative irrigation depth",
+      "source_model_path": "Output/app_models/basel_rc5_app_v1/models/cumulative_irrigation.joblib",
+      "source_model_sha256": "85969657537e53403704ba0f6d3e6da51da650b59ee4a60fa4e6f13fc52cff85",
+      "source_runtime_class": "analysis.surrogate.ScaledGaussianProcessRegressor",
+      "target": "irr_total_raw",
+      "target_unit": "mm"
+    }
+  ],
+  "operational_financial": {
+    "assumption_statuses": {
+      "water_unit_cost_chf_m3": "provisional_user_configurable",
+      "whitening_unit_cost_chf_m2": "illustrative_user_configurable"
+    },
+    "consequence_contract_runtime_path": "operational/consequence_contract.json",
+    "consequence_contract_version": "app_v2_operational_financial_v1",
+    "cost_defaults_runtime_path": "financial/cost_defaults.json",
+    "cost_defaults_version": "app_v2_financial_defaults_v1"
+  },
+  "runtime": {
+    "forbidden_private_imports": [
+      "analysis.surrogate"
+    ],
+    "isolated_load_check": {
+      "passed": true,
+      "results": {
+        "annual_mean_delta_t2.joblib": {
+          "analysis_loaded": false,
+          "class": "sklearn.pipeline.Pipeline",
+          "prediction": 4.372125300688978e-10
+        },
+        "cumulative_irrigation.joblib": {
+          "analysis_loaded": false,
+          "class": "sklearn.pipeline.Pipeline",
+          "prediction": 0.0007986662600387717
+        },
+        "warm_season_daytime_mean_delta_t2.joblib": {
+          "analysis_loaded": false,
+          "class": "sklearn.pipeline.Pipeline",
+          "prediction": 1.138588306970334e-09
+        },
+        "warm_season_nighttime_mean_delta_t2.joblib": {
+          "analysis_loaded": false,
+          "class": "sklearn.pipeline.Pipeline",
+          "prediction": 5.960082274936163e-09
+        }
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"annual_mean_delta_t2.joblib\": {\"analysis_loaded\": false, \"class\": \"sklearn.pipeline.Pipeline\", \"prediction\": 4.372125300688978e-10}, \"cumulative_irrigation.joblib\": {\"analysis_loaded\": false, \"class\": \"sklearn.pipeline.Pipeline\", \"prediction\": 0.0007986662600387717}, \"warm_season_daytime_mean_delta_t2.joblib\": {\"analysis_loaded\": false, \"class\": \"sklearn.pipeline.Pipeline\", \"prediction\": 1.138588306970334e-09}, \"warm_season_nighttime_mean_delta_t2.joblib\": {\"analysis_loaded\": false, \"class\": \"sklearn.pipeline.Pipeline\", \"prediction\": 5.960082274936163e-09}}"
+    },
+    "joblib_version": "1.5.3",
+    "numpy_version": "2.4.4",
+    "private_analysis_imports_required": false,
+    "python_version": "3.11.15 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+    "required_public_dependencies": [
+      "python",
+      "numpy",
+      "scikit-learn",
+      "joblib"
+    ],
+    "scikit_learn_version": "1.8.0"
+  },
+  "source_reports": {
+    "m1c1": "Output/app_models/basel_rc5_app_v1/APP_M1C1_IRRIGATION_MODEL_RECOVERY.md",
+    "m1c2": "Output/app_models/basel_rc5_app_v1/APP_M1C2_OPERATIONAL_FINANCIAL_CONTRACT.md"
+  },
+  "training_context": {
+    "context_id": "basel_rc5_fixed_training_context_v1",
+    "provenance_summary": "field-level values and uncertainty recorded in rc5_context.json",
+    "runtime_path": "training_context/rc5_context.json",
+    "spatial_context_identity_status": "fixed_rc5_training_context_not_dynamic_site_context"
+  },
+  "validation": {
+    "golden_app_contract_runtime_path": "validation/golden_app_contract.json",
+    "golden_predictions_runtime_path": "validation/golden_predictions.csv",
+    "parity": [
+      {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "annual_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "warm_season_daytime_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "warm_season_nighttime_mean_delta_t2",
+        "tolerance": 1e-12
+      },
+      {
+        "max_absolute_difference": 0.0,
+        "mean_absolute_difference": 0.0,
+        "n_cases": 22,
+        "passed": true,
+        "target": "irr_total_raw",
+        "tolerance": 1e-12
+      }
+    ],
+    "validation_status": "pass"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "golden_app_contract_version": "app_v2_golden_contract_v1",
+  "scenarios": [
+    {
+      "cm3_enabled": false,
+      "contract": {
+        "financial": {
+          "irrigation_cost_chf": 0.0,
+          "total_variable_cost_chf": 0.0,
+          "water_unit_cost_chf_m3": 0.73,
+          "whitening_cost_chf": 0.0,
+          "whitening_unit_cost_chf_m2": 1.0
+        },
+        "metadata": {
+          "applicability_statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+          "basel_only_validity": "Basel-only rc5 Bachelorarbeit surrogate layer; do not transfer to other cities without city-specific validation.",
+          "bundle_version": "basel_rc5_app_v1",
+          "city": "Basel",
+          "cost_assumption_status": "illustrative user-configurable assumption",
+          "is_canonical_basel_baseline": true,
+          "model_version": "basel_rc5_app_v1",
+          "source_run": "c02_albedo_000_087_n60_rc5",
+          "training_context_id": "basel_rc5_fixed_training_context_v1"
+        },
+        "operational": {
+          "irrigation_mm": 0.0,
+          "water_volume_m3": 0.0,
+          "whitening_area_m2": 0.0
+        },
+        "planner": {
+          "annual_cooling": -4.366392178378753e-10,
+          "warm_day_cooling": -1.1397977700555728e-09,
+          "warm_night_cooling": -5.960077001376796e-09
+        },
+        "scientific": {
+          "annual_delta_t2": 4.366392178378753e-10,
+          "irrigation_raw_mm": 0.0007986684576053449,
+          "warm_day_delta_t2": 1.1397977700555728e-09,
+          "warm_night_delta_t2": 5.960077001376796e-09
+        }
+      },
+      "grass_irrfrac": 0.0,
+      "paved_albedo": 0.1,
+      "scenario_id": "ANC_BASELINE"
+    },
+    {
+      "cm3_enabled": false,
+      "contract": {
+        "financial": {
+          "irrigation_cost_chf": 639586.3171126442,
+          "total_variable_cost_chf": 639586.3171126442,
+          "water_unit_cost_chf_m3": 0.73,
+          "whitening_cost_chf": 0.0,
+          "whitening_unit_cost_chf_m2": 1.0
+        },
+        "metadata": {
+          "applicability_statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+          "basel_only_validity": "Basel-only rc5 Bachelorarbeit surrogate layer; do not transfer to other cities without city-specific validation.",
+          "bundle_version": "basel_rc5_app_v1",
+          "city": "Basel",
+          "cost_assumption_status": "illustrative user-configurable assumption",
+          "is_canonical_basel_baseline": false,
+          "model_version": "basel_rc5_app_v1",
+          "source_run": "c02_albedo_000_087_n60_rc5",
+          "training_context_id": "basel_rc5_fixed_training_context_v1"
+        },
+        "operational": {
+          "irrigation_mm": 1116.1090953889614,
+          "water_volume_m3": 876145.6398803346,
+          "whitening_area_m2": 0.0
+        },
+        "planner": {
+          "annual_cooling": 0.02896920234836725,
+          "warm_day_cooling": 0.07054756216713354,
+          "warm_night_cooling": 0.03960498513351715
+        },
+        "scientific": {
+          "annual_delta_t2": -0.02896920234836725,
+          "irrigation_raw_mm": 1116.1090953889614,
+          "warm_day_delta_t2": -0.07054756216713354,
+          "warm_night_delta_t2": -0.03960498513351715
+        }
+      },
+      "grass_irrfrac": 1.0,
+      "paved_albedo": 0.1,
+      "scenario_id": "ANC_BS1G_MAX"
+    },
+    {
+      "cm3_enabled": true,
+      "contract": {
+        "financial": {
+          "irrigation_cost_chf": 0.0,
+          "total_variable_cost_chf": 285743.6879194631,
+          "water_unit_cost_chf_m3": 0.73,
+          "whitening_cost_chf": 285743.6879194631,
+          "whitening_unit_cost_chf_m2": 1.0
+        },
+        "metadata": {
+          "applicability_statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+          "basel_only_validity": "Basel-only rc5 Bachelorarbeit surrogate layer; do not transfer to other cities without city-specific validation.",
+          "bundle_version": "basel_rc5_app_v1",
+          "city": "Basel",
+          "cost_assumption_status": "illustrative user-configurable assumption",
+          "is_canonical_basel_baseline": false,
+          "model_version": "basel_rc5_app_v1",
+          "source_run": "c02_albedo_000_087_n60_rc5",
+          "training_context_id": "basel_rc5_fixed_training_context_v1"
+        },
+        "operational": {
+          "irrigation_mm": 0.0,
+          "water_volume_m3": 0.0,
+          "whitening_area_m2": 285743.6879194631
+        },
+        "planner": {
+          "annual_cooling": 0.02034428623556114,
+          "warm_day_cooling": 0.06576856150455904,
+          "warm_night_cooling": 0.006200080923426235
+        },
+        "scientific": {
+          "annual_delta_t2": -0.02034428623556114,
+          "irrigation_raw_mm": -0.0007243308914439694,
+          "warm_day_delta_t2": -0.06576856150455904,
+          "warm_night_delta_t2": -0.006200080923426235
+        }
+      },
+      "grass_irrfrac": 0.0,
+      "paved_albedo": 0.87,
+      "scenario_id": "ANC_CM3_MAX"
+    },
+    {
+      "cm3_enabled": true,
+      "contract": {
+        "financial": {
+          "irrigation_cost_chf": 633276.3087587728,
+          "total_variable_cost_chf": 919019.9966782359,
+          "water_unit_cost_chf_m3": 0.73,
+          "whitening_cost_chf": 285743.6879194631,
+          "whitening_unit_cost_chf_m2": 1.0
+        },
+        "metadata": {
+          "applicability_statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+          "basel_only_validity": "Basel-only rc5 Bachelorarbeit surrogate layer; do not transfer to other cities without city-specific validation.",
+          "bundle_version": "basel_rc5_app_v1",
+          "city": "Basel",
+          "cost_assumption_status": "illustrative user-configurable assumption",
+          "is_canonical_basel_baseline": false,
+          "model_version": "basel_rc5_app_v1",
+          "source_run": "c02_albedo_000_087_n60_rc5",
+          "training_context_id": "basel_rc5_fixed_training_context_v1"
+        },
+        "operational": {
+          "irrigation_mm": 1105.0978252487091,
+          "water_volume_m3": 867501.7928202366,
+          "whitening_area_m2": 285743.6879194631
+        },
+        "planner": {
+          "annual_cooling": 0.04883551706952921,
+          "warm_day_cooling": 0.13337682549147706,
+          "warm_night_cooling": 0.045965821824400566
+        },
+        "scientific": {
+          "annual_delta_t2": -0.04883551706952921,
+          "irrigation_raw_mm": 1105.0978252487091,
+          "warm_day_delta_t2": -0.13337682549147706,
+          "warm_night_delta_t2": -0.045965821824400566
+        }
+      },
+      "grass_irrfrac": 1.0,
+      "paved_albedo": 0.87,
+      "scenario_id": "ANC_JOINT_MAX"
+    },
+    {
+      "cm3_enabled": true,
+      "contract": {
+        "financial": {
+          "irrigation_cost_chf": 263182.5309215948,
+          "total_variable_cost_chf": 548926.218841058,
+          "water_unit_cost_chf_m3": 0.73,
+          "whitening_cost_chf": 285743.6879194631,
+          "whitening_unit_cost_chf_m2": 1.0
+        },
+        "metadata": {
+          "applicability_statement": "Basel rc5 only: being geographically located in Basel alone does not establish validity. Changing radius, geometry mode, land-cover representation, forcing year, or other fixed site-context properties does not create a locally validated surrogate. Dynamic SuewsSiteContext outputs must remain separate and must not replace fixed rc5 training context quantities. A new validated scientific context requires its own compatible surrogate artefacts.",
+          "basel_only_validity": "Basel-only rc5 Bachelorarbeit surrogate layer; do not transfer to other cities without city-specific validation.",
+          "bundle_version": "basel_rc5_app_v1",
+          "city": "Basel",
+          "cost_assumption_status": "illustrative user-configurable assumption",
+          "is_canonical_basel_baseline": false,
+          "model_version": "basel_rc5_app_v1",
+          "source_run": "c02_albedo_000_087_n60_rc5",
+          "training_context_id": "basel_rc5_fixed_training_context_v1"
+        },
+        "operational": {
+          "irrigation_mm": 459.26626109692836,
+          "water_volume_m3": 360524.0149610888,
+          "whitening_area_m2": 285743.6879194631
+        },
+        "planner": {
+          "annual_cooling": 0.03548140070661217,
+          "warm_day_cooling": 0.09115307034191503,
+          "warm_night_cooling": 0.03997475910760485
+        },
+        "scientific": {
+          "annual_delta_t2": -0.03548140070661217,
+          "irrigation_raw_mm": 459.26626109692836,
+          "warm_day_delta_t2": -0.09115307034191503,
+          "warm_night_delta_t2": -0.03997475910760485
+        }
+      },
+      "grass_irrfrac": 0.3,
+      "paved_albedo": 0.4,
+      "scenario_id": "APP_INTERIOR_GRASS030_ALBEDO040"
+    }
+  ],
+  "training_context_id": "basel_rc5_fixed_training_context_v1"
+}

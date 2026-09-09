@@ -1,0 +1,17 @@
+{
+  "cost_defaults_version": "app_v2_financial_defaults_v1",
+  "water_unit_cost_chf_m3": {
+    "currency": "CHF",
+    "denominator": "m3",
+    "source_path": "Output/cycle_02/runs/c02_albedo_000_087_n60_rc5/final/phase_4b/extras/phase_4b_water_cost_assumption.json",
+    "status": "provisional_user_configurable",
+    "value": 0.73
+  },
+  "whitening_unit_cost_chf_m2": {
+    "currency": "CHF",
+    "denominator": "m2",
+    "source_path": "APP_M1C2_OPERATIONAL_FINANCIAL_CONTRACT.md",
+    "status": "illustrative_user_configurable",
+    "value": 1.0
+  }
+}
