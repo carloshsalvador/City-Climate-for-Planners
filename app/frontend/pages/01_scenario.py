@@ -4,6 +4,8 @@ from app.frontend.basel_controls import (
     default_financial_assumptions,
     format_celsius,
     format_chf,
+    format_chf_per_m2,
+    format_chf_per_m3,
     format_m2,
     format_m3,
     grass_percent_to_irrfrac,
@@ -119,15 +121,15 @@ except BaselRc5RuntimeError as exc:
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.metric("Annual cooling [°C]", format_celsius(result.planner.annual_cooling))
+    st.metric("Annual cooling", format_celsius(result.planner.annual_cooling))
 with col2:
     st.metric(
-        "Warm-season daytime cooling [°C]",
+        "Warm-season daytime cooling",
         format_celsius(result.planner.warm_day_cooling),
     )
 with col3:
     st.metric(
-        "Warm-season nighttime cooling [°C]",
+        "Warm-season nighttime cooling",
         format_celsius(result.planner.warm_night_cooling),
     )
 with col4:
@@ -143,8 +145,8 @@ with left_col:
             "Irrigated grass fraction": f"{grass_percent} %",
             "Street whitening / CM3": "On" if cm3_enabled else "Off",
             "Effective target paved albedo": f"{paved_albedo:.2f}",
-            "Water unit cost": f"{format_chf(water_unit_cost)}/m³",
-            "Street whitening unit cost": f"{format_chf(whitening_unit_cost)}/m²",
+            "Water unit cost": format_chf_per_m3(water_unit_cost),
+            "Street whitening unit cost": format_chf_per_m2(whitening_unit_cost),
         }
     )
 

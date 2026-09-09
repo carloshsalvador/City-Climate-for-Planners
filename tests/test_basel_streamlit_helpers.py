@@ -3,6 +3,8 @@ from app.frontend.basel_controls import (
     default_financial_assumptions,
     format_celsius,
     format_chf,
+    format_chf_per_m2,
+    format_chf_per_m3,
     format_m2,
     format_m3,
     grass_percent_to_irrfrac,
@@ -44,6 +46,26 @@ def test_planner_formatting_helpers_use_readable_units():
     assert format_chf(1234.56) == "CHF 1,235"
     assert format_m3(1234.56) == "1,235 m³"
     assert format_m2(1234.56) == "1,235 m²"
+
+
+def test_unit_cost_formatting_preserves_decimal_precision():
+    assert format_chf_per_m3(0.73) == "CHF 0.73/m³"
+    assert format_chf_per_m2(1.0) == "CHF 1.00/m²"
+    assert format_chf_per_m2(1.25) == "CHF 1.25/m²"
+    assert format_chf_per_m3(0.73) != "CHF 1/m³"
+
+
+def test_large_total_chf_formatting_remains_whole_chf():
+    assert format_chf(639586.317113) == "CHF 639,586"
+
+
+def test_cooling_metric_labels_do_not_duplicate_temperature_units():
+    source = (FRONTEND_DIR / "pages" / "01_scenario.py").read_text(encoding="utf-8")
+
+    assert 'st.metric("Annual cooling", format_celsius' in source
+    assert '"Warm-season daytime cooling",' in source
+    assert '"Warm-season nighttime cooling",' in source
+    assert "Annual cooling [°C]" not in source
 
 
 def test_home_page_declares_basel_as_only_active_validated_demonstrator():

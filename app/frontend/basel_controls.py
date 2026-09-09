@@ -33,6 +33,14 @@ def format_chf(value: float) -> str:
     return f"CHF {value:,.0f}"
 
 
+def format_chf_per_m3(value: float) -> str:
+    return f"CHF {value:,.2f}/m³"
+
+
+def format_chf_per_m2(value: float) -> str:
+    return f"CHF {value:,.2f}/m²"
+
+
 def format_m3(value: float) -> str:
     return f"{value:,.0f} m³"
 
