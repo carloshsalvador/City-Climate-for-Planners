@@ -40,7 +40,7 @@ def get_basel_runtime() -> BaselRc5Runtime:
     return BaselRc5Runtime()
 
 
-st.markdown('<h1 class="main-title">Basel rc5 Intervention Scenario</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">Basel rc5 Demonstrator</h1>', unsafe_allow_html=True)
 st.info(
     "Cooling estimates use surrogate models calibrated for the fixed Basel rc5 scientific "
     "context. Site-specific predictions for other geometries or cities require local "
@@ -58,9 +58,9 @@ except BaselRc5RuntimeError as exc:
 
 defaults = default_financial_assumptions(runtime)
 
-st.sidebar.header("Basel rc5 interventions")
+st.sidebar.header("Intervention")
 grass_percent = st.sidebar.slider(
-    "Irrigated grass fraction",
+    "Irrigated grass fraction [%]",
     min_value=0,
     max_value=100,
     value=0,
@@ -84,13 +84,13 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.caption("Financial assumptions, not validated universal market prices.")
 water_unit_cost = st.sidebar.number_input(
-    "Water unit cost [CHF/m3]",
+    "Water unit cost [CHF/m³]",
     min_value=0.0,
     value=defaults["water_unit_cost_chf_m3"],
     step=0.01,
 )
 whitening_unit_cost = st.sidebar.number_input(
-    "Street whitening unit cost [CHF/m2]",
+    "Street whitening unit cost [CHF/m²]",
     min_value=0.0,
     value=defaults["whitening_unit_cost_chf_m2"],
     step=0.10,
@@ -119,11 +119,17 @@ except BaselRc5RuntimeError as exc:
 
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    st.metric("Annual cooling", format_celsius(result.planner.annual_cooling))
+    st.metric("Annual cooling [°C]", format_celsius(result.planner.annual_cooling))
 with col2:
-    st.metric("Warm-season daytime cooling", format_celsius(result.planner.warm_day_cooling))
+    st.metric(
+        "Warm-season daytime cooling [°C]",
+        format_celsius(result.planner.warm_day_cooling),
+    )
 with col3:
-    st.metric("Warm-season nighttime cooling", format_celsius(result.planner.warm_night_cooling))
+    st.metric(
+        "Warm-season nighttime cooling [°C]",
+        format_celsius(result.planner.warm_night_cooling),
+    )
 with col4:
     st.metric("Total variable cost", format_chf(result.financial.total_variable_cost_chf))
 
@@ -137,8 +143,8 @@ with left_col:
             "Irrigated grass fraction": f"{grass_percent} %",
             "Street whitening / CM3": "On" if cm3_enabled else "Off",
             "Effective target paved albedo": f"{paved_albedo:.2f}",
-            "Water unit cost": f"{format_chf(water_unit_cost)}/m3",
-            "Street whitening unit cost": f"{format_chf(whitening_unit_cost)}/m2",
+            "Water unit cost": f"{format_chf(water_unit_cost)}/m³",
+            "Street whitening unit cost": f"{format_chf(whitening_unit_cost)}/m²",
         }
     )
 
@@ -151,6 +157,22 @@ with right_col:
             "Training context": result.metadata.training_context_id,
             "Source run": result.metadata.source_run,
         }
+    )
+
+with st.expander("Fixed rc5 context", expanded=False):
+    st.write(
+        {
+            "Validated demonstrator": result.metadata.city,
+            "Model version": result.metadata.model_version,
+            "Irrigated grass fraction range": "0-100 %",
+            "Target paved albedo range": "0.10-0.87",
+            "Fixed rc5 training-context site area": format_m2(runtime.site_area_m2),
+            "Fixed rc5 training-context paved fraction": f"{runtime.paved_fraction:.3f}",
+        }
+    )
+    st.caption(
+        "Site area and paved fraction are fixed training-context properties, not dynamic "
+        "site measurements."
     )
 
 with st.expander("Operational details", expanded=False):
@@ -168,9 +190,9 @@ with st.expander("Operational details", expanded=False):
 with st.expander("Scientific outputs", expanded=False):
     st.write(
         {
-            "Annual Delta T2 [degC]": result.scientific.annual_delta_t2,
-            "Warm-season daytime Delta T2 [degC]": result.scientific.warm_day_delta_t2,
-            "Warm-season nighttime Delta T2 [degC]": result.scientific.warm_night_delta_t2,
+            "Annual Delta T2 [°C]": result.scientific.annual_delta_t2,
+            "Warm-season daytime Delta T2 [°C]": result.scientific.warm_day_delta_t2,
+            "Warm-season nighttime Delta T2 [°C]": result.scientific.warm_night_delta_t2,
             "Raw irrigation [mm]": result.scientific.irrigation_raw_mm,
         }
     )

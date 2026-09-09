@@ -26,7 +26,7 @@ def default_financial_assumptions(runtime: BaselRc5Runtime) -> dict[str, float]:
 
 
 def format_celsius(value: float) -> str:
-    return f"{value:.3f} degC"
+    return f"{value:.3f} °C"
 
 
 def format_chf(value: float) -> str:
@@ -34,8 +34,8 @@ def format_chf(value: float) -> str:
 
 
 def format_m3(value: float) -> str:
-    return f"{value:,.0f} m3"
+    return f"{value:,.0f} m³"
 
 
 def format_m2(value: float) -> str:
-    return f"{value:,.0f} m2"
+    return f"{value:,.0f} m²"
