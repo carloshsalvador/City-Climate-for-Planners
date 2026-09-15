@@ -74,7 +74,10 @@ with st.sidebar:
     st.markdown("### Demonstrator Context")
     st.text_input("Validated demonstrator", value="Basel rc5", disabled=True)
     st.markdown("---")
-    st.info("Additional cities and dynamic site geometries are not yet validated.")
+    st.info(
+        "Additional cities are not validated for surrogate decision support. Dynamic "
+        "geometries are technical context only."
+    )
 
 st.markdown('<h1 class="main-title">Basel rc5 Demonstrator</h1>', unsafe_allow_html=True)
 st.markdown(
@@ -121,6 +124,14 @@ with right_col:
         "The current surrogate is not Switzerland-wide, multi-city, or dynamically "
         "generated from selected coordinates."
     )
+
+st.markdown("---")
+st.subheader("Technical Site Workflow")
+st.write(
+    "Open the Technical Site page to define dynamic geometry and area for future "
+    "city-specific SUEWS preparation. These technical-site values do not change the fixed "
+    "Basel rc5 decision-support outputs."
+)
 
 st.markdown("---")
 st.caption("© 2026 Carlos Salvador | DHBW Bachelor Thesis Project in partnership with meteoblue AG.")

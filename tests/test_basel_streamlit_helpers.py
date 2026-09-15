@@ -72,7 +72,8 @@ def test_home_page_declares_basel_as_only_active_validated_demonstrator():
     source = (FRONTEND_DIR / "streamlit_app.py").read_text(encoding="utf-8")
 
     assert 'value="Basel rc5"' in source
-    assert "Additional cities and dynamic site geometries are not yet validated." in source
+    assert "Additional cities are not validated for surrogate decision support." in source
+    assert "geometries are technical context only." in source
     assert "selectbox" not in source
     assert "Zurich" not in source
     assert "Berlin" not in source
