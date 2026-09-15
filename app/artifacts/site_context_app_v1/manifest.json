@@ -1,0 +1,42 @@
+{
+  "app_contract_sha256": "1b62889d6f066e4b9d6fc6cf59edee6a12a1d4a65e9a0135c77e18f2e6cde455",
+  "contract_golden_sha256": "cabe8853ab4c171ed0a9b37875cf00c65ec295e4f8d6b24d202b66cc03230b12",
+  "contract_version": "site_context_app_v1",
+  "created_at_utc": "2026-09-12T09:40:45.793474+00:00",
+  "dec_0024_isolation_statement": "Dynamic SiteContext outputs remain isolated from BaselRc5Runtime and fixed rc5 surrogate inference.",
+  "dec_0026_reference": "App v2 consumes dynamic site context through a stable serializable application contract independent of internal SuewsSiteContext implementation.",
+  "decision_references": [
+    "DEC-0026",
+    "DEC-0024"
+  ],
+  "excluded_private_provider_components": [
+    "site_context/app_adapter.py",
+    "site_context/core.py and SuewsSiteContext implementation",
+    "project_config and private settings",
+    "LCZ raster files, including the 1.64 GiB global GeoTIFF",
+    "Natural Earth files",
+    "geoBoundaries cache",
+    "meteoblue credentials/configuration",
+    "SuPy/SUEWS execution code",
+    "BaselRc5Runtime and surrogate model artefacts"
+  ],
+  "included_files": [
+    {
+      "classification": "A - safe candidate for public GitHub promotion",
+      "description": "Framework-independent SiteContextRequest/SiteContextResult contract.",
+      "path": "app_contract.py"
+    },
+    {
+      "classification": "A - safe validation fixture for public GitHub promotion",
+      "description": "Deterministic serialized contract examples generated from the private scientific reference adapter.",
+      "path": "validation/contract_golden.json"
+    }
+  ],
+  "package_name": "site_context_app_v1",
+  "package_statement": "This package contains the application-facing SiteContext contract and validation fixtures only. It does not contain the canonical scientific SuewsSiteContext implementation.",
+  "package_version": "m5c1-2026-09-12",
+  "promoted_contract_path": "app_contract.py",
+  "source_file_path": "site_context/app_contract.py",
+  "source_repository_identity": "private GitLab repository meteoblue_cityclimate",
+  "validation_golden_path": "validation/contract_golden.json"
+}

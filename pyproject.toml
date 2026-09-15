@@ -26,6 +26,8 @@ dependencies = [
     "watchdog>=6.0.0",
     "streamlit>=1.50.0",
     "Pillow>=10.0",
+    "shapely>=2.0",
+    "pyproj>=3.6",
 ]
 
 [project.optional-dependencies]

@@ -1,0 +1,2832 @@
+{
+  "contract_version": "site_context_app_v1",
+  "generated_at_utc": "2026-09-12T00:00:00+00:00",
+  "package": "site_context_app_v1",
+  "scenarios": [
+    {
+      "contract_version": "site_context_app_v1",
+      "expected": {
+        "administrative_context": {
+          "admin_level": null,
+          "country": null,
+          "country_iso3": null,
+          "error": null,
+          "metadata": {},
+          "name": null,
+          "polygon_geojson": null,
+          "source": null,
+          "status": "not_requested"
+        },
+        "area": {
+          "area_unit": "m2",
+          "effective_mode": "bbox",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "metric_crs_for_area": "EPSG:32632",
+          "requested_area_m2": 100005561.12962262,
+          "requested_matches_effective": true,
+          "requested_mode": "bbox",
+          "surfacearea_m2_for_config": 100005561.12962262,
+          "warnings": []
+        },
+        "capabilities": {
+          "admin": {
+            "message": "Administrative lookup was not requested.",
+            "status": "unavailable"
+          },
+          "geometry": {
+            "message": null,
+            "status": "available"
+          },
+          "lcz": {
+            "message": "LCZ resolution was not requested.",
+            "status": "unavailable"
+          },
+          "site_properties": {
+            "message": null,
+            "status": "partial"
+          },
+          "suews_fractions": {
+            "message": "SUEWS fractions require a resolved LCZ source.",
+            "status": "unavailable"
+          }
+        },
+        "errors": [],
+        "geometry": {
+          "crs": "EPSG:4326",
+          "effective_geometry_crs": "EPSG:4326",
+          "effective_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "effective_mode": "bbox",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "point_geojson": {
+            "coordinates": [
+              7.5886,
+              47.5596
+            ],
+            "type": "Point"
+          },
+          "radius_meter": 5000.0,
+          "radius_semantics": "radius_meter is the square half-size in metres.",
+          "requested_geometry_available": true,
+          "requested_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "requested_matches_effective": true,
+          "requested_mode": "bbox"
+        },
+        "input": {
+          "fallback_mode": "bbox",
+          "include_admin": false,
+          "include_lcz": false,
+          "latitude": 47.5596,
+          "longitude": 7.5886,
+          "radius_meter": 5000,
+          "radius_unit": "m",
+          "requested_mode": "bbox"
+        },
+        "lcz": {},
+        "metadata": {
+          "adapter": "SuewsSiteContextAdapter",
+          "contract_version": "site_context_app_v1",
+          "generated_at_utc": "2026-09-12T00:00:00+00:00"
+        },
+        "provenance": {
+          "admin_source": "SuewsSiteContext.get_admin_info",
+          "area_source": "SuewsSiteContext.get_area_info",
+          "dec_0024_boundary": "Dynamic site-context outputs are not inputs to Basel rc5 surrogate inference.",
+          "fixed_surrogate_runtime_dependency": false,
+          "lcz_source": null,
+          "site_context_class": "site_context.core.SuewsSiteContext",
+          "site_property_source": "SuewsSiteContext.get_site_properties_for_suews",
+          "suews_fraction_source": null
+        },
+        "site_properties": {
+          "provenance": {
+            "alt": {
+              "confidence": "low",
+              "source": "fallback",
+              "value": 0.0
+            },
+            "lat": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "lng": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "narp_trans_site": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "pipecapacity": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "runofftowater": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "surfacearea": {
+              "area_info": {
+                "admin_info": {
+                  "admin_level": null,
+                  "country": null,
+                  "country_iso3": null,
+                  "error": null,
+                  "metadata": {},
+                  "name": null,
+                  "polygon_geojson": null,
+                  "source": null,
+                  "status": "not_requested"
+                },
+                "effective_geometry_crs": "EPSG:4326",
+                "effective_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "effective_mode": "bbox",
+                "fallback_mode": "bbox",
+                "fallback_reason": null,
+                "fallback_used": false,
+                "metric_crs_for_area": "EPSG:32632",
+                "requested_area_m2": 100005561.12962262,
+                "requested_geometry_available": true,
+                "requested_geometry_crs": "EPSG:4326",
+                "requested_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "requested_matches_effective": true,
+                "requested_mode": "bbox",
+                "spatial_provenance": {
+                  "admin_info": {
+                    "admin_level": null,
+                    "country": null,
+                    "country_iso3": null,
+                    "error": null,
+                    "metadata": {},
+                    "name": null,
+                    "polygon_geojson": null,
+                    "source": null,
+                    "status": "not_requested"
+                  },
+                  "effective_mode": "bbox",
+                  "fallback_mode": "bbox",
+                  "fallback_reason": null,
+                  "fallback_used": false,
+                  "requested_matches_effective": true,
+                  "requested_mode": "bbox",
+                  "warnings": []
+                },
+                "surfacearea_m2_for_config": 100005561.12962262,
+                "warnings": []
+              },
+              "confidence": "high",
+              "source": "site_context.get_area_info"
+            },
+            "timezone": {
+              "confidence": "high",
+              "source": "timezonefinder",
+              "tz_name": "Europe/Zurich",
+              "value": 1.0
+            },
+            "z": {
+              "confidence": "medium",
+              "source": "forcing_height_assumption",
+              "value": 10.0
+            },
+            "z0m_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption",
+              "value": 1.0
+            },
+            "zdm_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption"
+            }
+          },
+          "units": {
+            "alt": "m",
+            "lat": "degrees",
+            "lng": "degrees",
+            "surfacearea": "m2",
+            "timezone": "hours_utc_offset",
+            "z": "m",
+            "z0m_in": "m",
+            "zdm_in": "m"
+          },
+          "values": {
+            "alt": 0.0,
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "narp_trans_site": 1.0,
+            "pipecapacity": 100.0,
+            "runofftowater": 0.0,
+            "surfacearea": 100005561.12962262,
+            "timezone": 1.0,
+            "z": 10.0,
+            "z0m_in": 1.0,
+            "zdm_in": 3.0
+          },
+          "warnings": [
+            "No altitude source was available; using altitude 0.0.",
+            "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+            "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+            "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+          ]
+        },
+        "suews_fractions": {},
+        "warnings": [
+          "No altitude source was available; using altitude 0.0.",
+          "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+          "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+          "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+        ]
+      },
+      "request": {
+        "admin_preferred_levels": [
+          "ADM3",
+          "ADM2",
+          "ADM1",
+          "ADM0"
+        ],
+        "fallback_mode": "bbox",
+        "include_admin": false,
+        "include_lcz": false,
+        "latitude": 47.5596,
+        "longitude": 7.5886,
+        "mode": "bbox",
+        "nearest_tolerance_km": 10.0,
+        "radius_meter": 5000
+      },
+      "scenario_id": "bbox_geometry_only"
+    },
+    {
+      "contract_version": "site_context_app_v1",
+      "expected": {
+        "administrative_context": {
+          "admin_level": null,
+          "country": null,
+          "country_iso3": null,
+          "error": null,
+          "metadata": {},
+          "name": null,
+          "polygon_geojson": null,
+          "source": null,
+          "status": "not_requested"
+        },
+        "area": {
+          "area_unit": "m2",
+          "effective_mode": "buffer",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "metric_crs_for_area": "EPSG:32632",
+          "requested_area_m2": 78413712.2636475,
+          "requested_matches_effective": true,
+          "requested_mode": "buffer",
+          "surfacearea_m2_for_config": 78413712.2636475,
+          "warnings": []
+        },
+        "capabilities": {
+          "admin": {
+            "message": "Administrative lookup was not requested.",
+            "status": "unavailable"
+          },
+          "geometry": {
+            "message": null,
+            "status": "available"
+          },
+          "lcz": {
+            "message": "LCZ resolution was not requested.",
+            "status": "unavailable"
+          },
+          "site_properties": {
+            "message": null,
+            "status": "partial"
+          },
+          "suews_fractions": {
+            "message": "SUEWS fractions require a resolved LCZ source.",
+            "status": "unavailable"
+          }
+        },
+        "errors": [],
+        "geometry": {
+          "crs": "EPSG:4326",
+          "effective_geometry_crs": "EPSG:4326",
+          "effective_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.6550457285253914,
+                  47.560398542727654
+                ],
+                [
+                  7.654838628618586,
+                  47.55598627284676
+                ],
+                [
+                  7.653993734417268,
+                  47.55160898409717
+                ],
+                [
+                  7.652519338438358,
+                  47.54730881985337
+                ],
+                [
+                  7.65042978498001,
+                  47.5431271707529
+                ],
+                [
+                  7.647745326419063,
+                  47.53910427694493
+                ],
+                [
+                  7.644491923238846,
+                  47.5352788417675
+                ],
+                [
+                  7.64070098990092,
+                  47.53168766052699
+                ],
+                [
+                  7.636409089164261,
+                  47.528365267896504
+                ],
+                [
+                  7.631657577914399,
+                  47.52534360726129
+                ],
+                [
+                  7.62649220799017,
+                  47.52265172512163
+                ],
+                [
+                  7.620962685884544,
+                  47.52031549341825
+                ],
+                [
+                  7.615122195546361,
+                  47.518357362376044
+                ],
+                [
+                  7.609026888820046,
+                  47.516796146169746
+                ],
+                [
+                  7.602735348329393,
+                  47.515646843404504
+                ],
+                [
+                  7.596308027837964,
+                  47.51492049407669
+                ],
+                [
+                  7.589806675302116,
+                  47.51462407433901
+                ],
+                [
+                  7.5832937439724875,
+                  47.51476043004218
+                ],
+                [
+                  7.576831796995517,
+                  47.51532824966568
+                ],
+                [
+                  7.570482911018183,
+                  47.51632207688526
+                ],
+                [
+                  7.564308084306393,
+                  47.51773236265883
+                ],
+                [
+                  7.558366654850461,
+                  47.51954555634633
+                ],
+                [
+                  7.552715733849946,
+                  47.52174423501802
+                ],
+                [
+                  7.54740965984493,
+                  47.524307269751326
+                ],
+                [
+                  7.542499478592235,
+                  47.527210027371304
+                ],
+                [
+                  7.538032453573219,
+                  47.53042460575816
+                ],
+                [
+                  7.534051611765719,
+                  47.533920100529095
+                ],
+                [
+                  7.530595329017162,
+                  47.53766290060338
+                ],
+                [
+                  7.527696959020064,
+                  47.541617009883296
+                ],
+                [
+                  7.525384509516644,
+                  47.545744392029654
+                ],
+                [
+                  7.523680368947969,
+                  47.55000533508424
+                ],
+                [
+                  7.522601086317228,
+                  47.55435883249261
+                ],
+                [
+                  7.52215720655912,
+                  47.558762976912675
+                ],
+                [
+                  7.52235316320123,
+                  47.56317536305977
+                ],
+                [
+                  7.523187229572418,
+                  47.56755349573766
+                ],
+                [
+                  7.524651529261822,
+                  47.57185519914035
+                ],
+                [
+                  7.526732105965042,
+                  47.576039023481584
+                ],
+                [
+                  7.529409052276461,
+                  47.58006464501927
+                ],
+                [
+                  7.532656696404451,
+                  47.58389325559062
+                ],
+                [
+                  7.536443845205351,
+                  47.58748793786098
+                ],
+                [
+                  7.540734081359041,
+                  47.59081402261486
+                ],
+                [
+                  7.545486111950486,
+                  47.59383942458089
+                ],
+                [
+                  7.550654165184408,
+                  47.59653495348155
+                ],
+                [
+                  7.55618843145113,
+                  47.59887459723289
+                ],
+                [
+                  7.562035544487352,
+                  47.60083577448668
+                ],
+                [
+                  7.568139097942522,
+                  47.6023995540036
+                ],
+                [
+                  7.574440192275512,
+                  47.60355083867153
+                ],
+                [
+                  7.5808780065732115,
+                  47.60427851233037
+                ],
+                [
+                  7.587390389606948,
+                  47.60457554793386
+                ],
+                [
+                  7.593914464228729,
+                  47.604439075963825
+                ],
+                [
+                  7.600387239060086,
+                  47.603870412408874
+                ],
+                [
+                  7.606746221344287,
+                  47.602875046025254
+                ],
+                [
+                  7.61293002481903,
+                  47.601462585004526
+                ],
+                [
+                  7.618878966521582,
+                  47.59964666358071
+                ],
+                [
+                  7.624535646561134,
+                  47.59744480950924
+                ],
+                [
+                  7.6298455050817084,
+                  47.59487827374187
+                ],
+                [
+                  7.634757350890893,
+                  47.59197182399658
+                ],
+                [
+                  7.639223856540868,
+                  47.58875350427956
+                ],
+                [
+                  7.6432020150144195,
+                  47.58525436275081
+                ],
+                [
+                  7.6466535535845175,
+                  47.5815081506337
+                ],
+                [
+                  7.649545300875752,
+                  47.57755099514857
+                ],
+                [
+                  7.651849503653225,
+                  47.573421049698226
+                ],
+                [
+                  7.653544090392753,
+                  47.5691581247468
+                ],
+                [
+                  7.654612879238695,
+                  47.56480330301162
+                ],
+                [
+                  7.6550457285253914,
+                  47.560398542727654
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "effective_mode": "buffer",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "point_geojson": {
+            "coordinates": [
+              7.5886,
+              47.5596
+            ],
+            "type": "Point"
+          },
+          "radius_meter": 5000.0,
+          "radius_semantics": "radius_meter is the true metric radial buffer distance.",
+          "requested_geometry_available": true,
+          "requested_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.6550457285253914,
+                  47.560398542727654
+                ],
+                [
+                  7.654838628618586,
+                  47.55598627284676
+                ],
+                [
+                  7.653993734417268,
+                  47.55160898409717
+                ],
+                [
+                  7.652519338438358,
+                  47.54730881985337
+                ],
+                [
+                  7.65042978498001,
+                  47.5431271707529
+                ],
+                [
+                  7.647745326419063,
+                  47.53910427694493
+                ],
+                [
+                  7.644491923238846,
+                  47.5352788417675
+                ],
+                [
+                  7.64070098990092,
+                  47.53168766052699
+                ],
+                [
+                  7.636409089164261,
+                  47.528365267896504
+                ],
+                [
+                  7.631657577914399,
+                  47.52534360726129
+                ],
+                [
+                  7.62649220799017,
+                  47.52265172512163
+                ],
+                [
+                  7.620962685884544,
+                  47.52031549341825
+                ],
+                [
+                  7.615122195546361,
+                  47.518357362376044
+                ],
+                [
+                  7.609026888820046,
+                  47.516796146169746
+                ],
+                [
+                  7.602735348329393,
+                  47.515646843404504
+                ],
+                [
+                  7.596308027837964,
+                  47.51492049407669
+                ],
+                [
+                  7.589806675302116,
+                  47.51462407433901
+                ],
+                [
+                  7.5832937439724875,
+                  47.51476043004218
+                ],
+                [
+                  7.576831796995517,
+                  47.51532824966568
+                ],
+                [
+                  7.570482911018183,
+                  47.51632207688526
+                ],
+                [
+                  7.564308084306393,
+                  47.51773236265883
+                ],
+                [
+                  7.558366654850461,
+                  47.51954555634633
+                ],
+                [
+                  7.552715733849946,
+                  47.52174423501802
+                ],
+                [
+                  7.54740965984493,
+                  47.524307269751326
+                ],
+                [
+                  7.542499478592235,
+                  47.527210027371304
+                ],
+                [
+                  7.538032453573219,
+                  47.53042460575816
+                ],
+                [
+                  7.534051611765719,
+                  47.533920100529095
+                ],
+                [
+                  7.530595329017162,
+                  47.53766290060338
+                ],
+                [
+                  7.527696959020064,
+                  47.541617009883296
+                ],
+                [
+                  7.525384509516644,
+                  47.545744392029654
+                ],
+                [
+                  7.523680368947969,
+                  47.55000533508424
+                ],
+                [
+                  7.522601086317228,
+                  47.55435883249261
+                ],
+                [
+                  7.52215720655912,
+                  47.558762976912675
+                ],
+                [
+                  7.52235316320123,
+                  47.56317536305977
+                ],
+                [
+                  7.523187229572418,
+                  47.56755349573766
+                ],
+                [
+                  7.524651529261822,
+                  47.57185519914035
+                ],
+                [
+                  7.526732105965042,
+                  47.576039023481584
+                ],
+                [
+                  7.529409052276461,
+                  47.58006464501927
+                ],
+                [
+                  7.532656696404451,
+                  47.58389325559062
+                ],
+                [
+                  7.536443845205351,
+                  47.58748793786098
+                ],
+                [
+                  7.540734081359041,
+                  47.59081402261486
+                ],
+                [
+                  7.545486111950486,
+                  47.59383942458089
+                ],
+                [
+                  7.550654165184408,
+                  47.59653495348155
+                ],
+                [
+                  7.55618843145113,
+                  47.59887459723289
+                ],
+                [
+                  7.562035544487352,
+                  47.60083577448668
+                ],
+                [
+                  7.568139097942522,
+                  47.6023995540036
+                ],
+                [
+                  7.574440192275512,
+                  47.60355083867153
+                ],
+                [
+                  7.5808780065732115,
+                  47.60427851233037
+                ],
+                [
+                  7.587390389606948,
+                  47.60457554793386
+                ],
+                [
+                  7.593914464228729,
+                  47.604439075963825
+                ],
+                [
+                  7.600387239060086,
+                  47.603870412408874
+                ],
+                [
+                  7.606746221344287,
+                  47.602875046025254
+                ],
+                [
+                  7.61293002481903,
+                  47.601462585004526
+                ],
+                [
+                  7.618878966521582,
+                  47.59964666358071
+                ],
+                [
+                  7.624535646561134,
+                  47.59744480950924
+                ],
+                [
+                  7.6298455050817084,
+                  47.59487827374187
+                ],
+                [
+                  7.634757350890893,
+                  47.59197182399658
+                ],
+                [
+                  7.639223856540868,
+                  47.58875350427956
+                ],
+                [
+                  7.6432020150144195,
+                  47.58525436275081
+                ],
+                [
+                  7.6466535535845175,
+                  47.5815081506337
+                ],
+                [
+                  7.649545300875752,
+                  47.57755099514857
+                ],
+                [
+                  7.651849503653225,
+                  47.573421049698226
+                ],
+                [
+                  7.653544090392753,
+                  47.5691581247468
+                ],
+                [
+                  7.654612879238695,
+                  47.56480330301162
+                ],
+                [
+                  7.6550457285253914,
+                  47.560398542727654
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "requested_matches_effective": true,
+          "requested_mode": "buffer"
+        },
+        "input": {
+          "fallback_mode": "bbox",
+          "include_admin": false,
+          "include_lcz": false,
+          "latitude": 47.5596,
+          "longitude": 7.5886,
+          "radius_meter": 5000,
+          "radius_unit": "m",
+          "requested_mode": "buffer"
+        },
+        "lcz": {},
+        "metadata": {
+          "adapter": "SuewsSiteContextAdapter",
+          "contract_version": "site_context_app_v1",
+          "generated_at_utc": "2026-09-12T00:00:00+00:00"
+        },
+        "provenance": {
+          "admin_source": "SuewsSiteContext.get_admin_info",
+          "area_source": "SuewsSiteContext.get_area_info",
+          "dec_0024_boundary": "Dynamic site-context outputs are not inputs to Basel rc5 surrogate inference.",
+          "fixed_surrogate_runtime_dependency": false,
+          "lcz_source": null,
+          "site_context_class": "site_context.core.SuewsSiteContext",
+          "site_property_source": "SuewsSiteContext.get_site_properties_for_suews",
+          "suews_fraction_source": null
+        },
+        "site_properties": {
+          "provenance": {
+            "alt": {
+              "confidence": "low",
+              "source": "fallback",
+              "value": 0.0
+            },
+            "lat": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "lng": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "narp_trans_site": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "pipecapacity": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "runofftowater": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "surfacearea": {
+              "area_info": {
+                "admin_info": {
+                  "admin_level": null,
+                  "country": null,
+                  "country_iso3": null,
+                  "error": null,
+                  "metadata": {},
+                  "name": null,
+                  "polygon_geojson": null,
+                  "source": null,
+                  "status": "not_requested"
+                },
+                "effective_geometry_crs": "EPSG:4326",
+                "effective_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.6550457285253914,
+                        47.560398542727654
+                      ],
+                      [
+                        7.654838628618586,
+                        47.55598627284676
+                      ],
+                      [
+                        7.653993734417268,
+                        47.55160898409717
+                      ],
+                      [
+                        7.652519338438358,
+                        47.54730881985337
+                      ],
+                      [
+                        7.65042978498001,
+                        47.5431271707529
+                      ],
+                      [
+                        7.647745326419063,
+                        47.53910427694493
+                      ],
+                      [
+                        7.644491923238846,
+                        47.5352788417675
+                      ],
+                      [
+                        7.64070098990092,
+                        47.53168766052699
+                      ],
+                      [
+                        7.636409089164261,
+                        47.528365267896504
+                      ],
+                      [
+                        7.631657577914399,
+                        47.52534360726129
+                      ],
+                      [
+                        7.62649220799017,
+                        47.52265172512163
+                      ],
+                      [
+                        7.620962685884544,
+                        47.52031549341825
+                      ],
+                      [
+                        7.615122195546361,
+                        47.518357362376044
+                      ],
+                      [
+                        7.609026888820046,
+                        47.516796146169746
+                      ],
+                      [
+                        7.602735348329393,
+                        47.515646843404504
+                      ],
+                      [
+                        7.596308027837964,
+                        47.51492049407669
+                      ],
+                      [
+                        7.589806675302116,
+                        47.51462407433901
+                      ],
+                      [
+                        7.5832937439724875,
+                        47.51476043004218
+                      ],
+                      [
+                        7.576831796995517,
+                        47.51532824966568
+                      ],
+                      [
+                        7.570482911018183,
+                        47.51632207688526
+                      ],
+                      [
+                        7.564308084306393,
+                        47.51773236265883
+                      ],
+                      [
+                        7.558366654850461,
+                        47.51954555634633
+                      ],
+                      [
+                        7.552715733849946,
+                        47.52174423501802
+                      ],
+                      [
+                        7.54740965984493,
+                        47.524307269751326
+                      ],
+                      [
+                        7.542499478592235,
+                        47.527210027371304
+                      ],
+                      [
+                        7.538032453573219,
+                        47.53042460575816
+                      ],
+                      [
+                        7.534051611765719,
+                        47.533920100529095
+                      ],
+                      [
+                        7.530595329017162,
+                        47.53766290060338
+                      ],
+                      [
+                        7.527696959020064,
+                        47.541617009883296
+                      ],
+                      [
+                        7.525384509516644,
+                        47.545744392029654
+                      ],
+                      [
+                        7.523680368947969,
+                        47.55000533508424
+                      ],
+                      [
+                        7.522601086317228,
+                        47.55435883249261
+                      ],
+                      [
+                        7.52215720655912,
+                        47.558762976912675
+                      ],
+                      [
+                        7.52235316320123,
+                        47.56317536305977
+                      ],
+                      [
+                        7.523187229572418,
+                        47.56755349573766
+                      ],
+                      [
+                        7.524651529261822,
+                        47.57185519914035
+                      ],
+                      [
+                        7.526732105965042,
+                        47.576039023481584
+                      ],
+                      [
+                        7.529409052276461,
+                        47.58006464501927
+                      ],
+                      [
+                        7.532656696404451,
+                        47.58389325559062
+                      ],
+                      [
+                        7.536443845205351,
+                        47.58748793786098
+                      ],
+                      [
+                        7.540734081359041,
+                        47.59081402261486
+                      ],
+                      [
+                        7.545486111950486,
+                        47.59383942458089
+                      ],
+                      [
+                        7.550654165184408,
+                        47.59653495348155
+                      ],
+                      [
+                        7.55618843145113,
+                        47.59887459723289
+                      ],
+                      [
+                        7.562035544487352,
+                        47.60083577448668
+                      ],
+                      [
+                        7.568139097942522,
+                        47.6023995540036
+                      ],
+                      [
+                        7.574440192275512,
+                        47.60355083867153
+                      ],
+                      [
+                        7.5808780065732115,
+                        47.60427851233037
+                      ],
+                      [
+                        7.587390389606948,
+                        47.60457554793386
+                      ],
+                      [
+                        7.593914464228729,
+                        47.604439075963825
+                      ],
+                      [
+                        7.600387239060086,
+                        47.603870412408874
+                      ],
+                      [
+                        7.606746221344287,
+                        47.602875046025254
+                      ],
+                      [
+                        7.61293002481903,
+                        47.601462585004526
+                      ],
+                      [
+                        7.618878966521582,
+                        47.59964666358071
+                      ],
+                      [
+                        7.624535646561134,
+                        47.59744480950924
+                      ],
+                      [
+                        7.6298455050817084,
+                        47.59487827374187
+                      ],
+                      [
+                        7.634757350890893,
+                        47.59197182399658
+                      ],
+                      [
+                        7.639223856540868,
+                        47.58875350427956
+                      ],
+                      [
+                        7.6432020150144195,
+                        47.58525436275081
+                      ],
+                      [
+                        7.6466535535845175,
+                        47.5815081506337
+                      ],
+                      [
+                        7.649545300875752,
+                        47.57755099514857
+                      ],
+                      [
+                        7.651849503653225,
+                        47.573421049698226
+                      ],
+                      [
+                        7.653544090392753,
+                        47.5691581247468
+                      ],
+                      [
+                        7.654612879238695,
+                        47.56480330301162
+                      ],
+                      [
+                        7.6550457285253914,
+                        47.560398542727654
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "effective_mode": "buffer",
+                "fallback_mode": "bbox",
+                "fallback_reason": null,
+                "fallback_used": false,
+                "metric_crs_for_area": "EPSG:32632",
+                "requested_area_m2": 78413712.2636475,
+                "requested_geometry_available": true,
+                "requested_geometry_crs": "EPSG:4326",
+                "requested_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.6550457285253914,
+                        47.560398542727654
+                      ],
+                      [
+                        7.654838628618586,
+                        47.55598627284676
+                      ],
+                      [
+                        7.653993734417268,
+                        47.55160898409717
+                      ],
+                      [
+                        7.652519338438358,
+                        47.54730881985337
+                      ],
+                      [
+                        7.65042978498001,
+                        47.5431271707529
+                      ],
+                      [
+                        7.647745326419063,
+                        47.53910427694493
+                      ],
+                      [
+                        7.644491923238846,
+                        47.5352788417675
+                      ],
+                      [
+                        7.64070098990092,
+                        47.53168766052699
+                      ],
+                      [
+                        7.636409089164261,
+                        47.528365267896504
+                      ],
+                      [
+                        7.631657577914399,
+                        47.52534360726129
+                      ],
+                      [
+                        7.62649220799017,
+                        47.52265172512163
+                      ],
+                      [
+                        7.620962685884544,
+                        47.52031549341825
+                      ],
+                      [
+                        7.615122195546361,
+                        47.518357362376044
+                      ],
+                      [
+                        7.609026888820046,
+                        47.516796146169746
+                      ],
+                      [
+                        7.602735348329393,
+                        47.515646843404504
+                      ],
+                      [
+                        7.596308027837964,
+                        47.51492049407669
+                      ],
+                      [
+                        7.589806675302116,
+                        47.51462407433901
+                      ],
+                      [
+                        7.5832937439724875,
+                        47.51476043004218
+                      ],
+                      [
+                        7.576831796995517,
+                        47.51532824966568
+                      ],
+                      [
+                        7.570482911018183,
+                        47.51632207688526
+                      ],
+                      [
+                        7.564308084306393,
+                        47.51773236265883
+                      ],
+                      [
+                        7.558366654850461,
+                        47.51954555634633
+                      ],
+                      [
+                        7.552715733849946,
+                        47.52174423501802
+                      ],
+                      [
+                        7.54740965984493,
+                        47.524307269751326
+                      ],
+                      [
+                        7.542499478592235,
+                        47.527210027371304
+                      ],
+                      [
+                        7.538032453573219,
+                        47.53042460575816
+                      ],
+                      [
+                        7.534051611765719,
+                        47.533920100529095
+                      ],
+                      [
+                        7.530595329017162,
+                        47.53766290060338
+                      ],
+                      [
+                        7.527696959020064,
+                        47.541617009883296
+                      ],
+                      [
+                        7.525384509516644,
+                        47.545744392029654
+                      ],
+                      [
+                        7.523680368947969,
+                        47.55000533508424
+                      ],
+                      [
+                        7.522601086317228,
+                        47.55435883249261
+                      ],
+                      [
+                        7.52215720655912,
+                        47.558762976912675
+                      ],
+                      [
+                        7.52235316320123,
+                        47.56317536305977
+                      ],
+                      [
+                        7.523187229572418,
+                        47.56755349573766
+                      ],
+                      [
+                        7.524651529261822,
+                        47.57185519914035
+                      ],
+                      [
+                        7.526732105965042,
+                        47.576039023481584
+                      ],
+                      [
+                        7.529409052276461,
+                        47.58006464501927
+                      ],
+                      [
+                        7.532656696404451,
+                        47.58389325559062
+                      ],
+                      [
+                        7.536443845205351,
+                        47.58748793786098
+                      ],
+                      [
+                        7.540734081359041,
+                        47.59081402261486
+                      ],
+                      [
+                        7.545486111950486,
+                        47.59383942458089
+                      ],
+                      [
+                        7.550654165184408,
+                        47.59653495348155
+                      ],
+                      [
+                        7.55618843145113,
+                        47.59887459723289
+                      ],
+                      [
+                        7.562035544487352,
+                        47.60083577448668
+                      ],
+                      [
+                        7.568139097942522,
+                        47.6023995540036
+                      ],
+                      [
+                        7.574440192275512,
+                        47.60355083867153
+                      ],
+                      [
+                        7.5808780065732115,
+                        47.60427851233037
+                      ],
+                      [
+                        7.587390389606948,
+                        47.60457554793386
+                      ],
+                      [
+                        7.593914464228729,
+                        47.604439075963825
+                      ],
+                      [
+                        7.600387239060086,
+                        47.603870412408874
+                      ],
+                      [
+                        7.606746221344287,
+                        47.602875046025254
+                      ],
+                      [
+                        7.61293002481903,
+                        47.601462585004526
+                      ],
+                      [
+                        7.618878966521582,
+                        47.59964666358071
+                      ],
+                      [
+                        7.624535646561134,
+                        47.59744480950924
+                      ],
+                      [
+                        7.6298455050817084,
+                        47.59487827374187
+                      ],
+                      [
+                        7.634757350890893,
+                        47.59197182399658
+                      ],
+                      [
+                        7.639223856540868,
+                        47.58875350427956
+                      ],
+                      [
+                        7.6432020150144195,
+                        47.58525436275081
+                      ],
+                      [
+                        7.6466535535845175,
+                        47.5815081506337
+                      ],
+                      [
+                        7.649545300875752,
+                        47.57755099514857
+                      ],
+                      [
+                        7.651849503653225,
+                        47.573421049698226
+                      ],
+                      [
+                        7.653544090392753,
+                        47.5691581247468
+                      ],
+                      [
+                        7.654612879238695,
+                        47.56480330301162
+                      ],
+                      [
+                        7.6550457285253914,
+                        47.560398542727654
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "requested_matches_effective": true,
+                "requested_mode": "buffer",
+                "spatial_provenance": {
+                  "admin_info": {
+                    "admin_level": null,
+                    "country": null,
+                    "country_iso3": null,
+                    "error": null,
+                    "metadata": {},
+                    "name": null,
+                    "polygon_geojson": null,
+                    "source": null,
+                    "status": "not_requested"
+                  },
+                  "effective_mode": "buffer",
+                  "fallback_mode": "bbox",
+                  "fallback_reason": null,
+                  "fallback_used": false,
+                  "requested_matches_effective": true,
+                  "requested_mode": "buffer",
+                  "warnings": []
+                },
+                "surfacearea_m2_for_config": 78413712.2636475,
+                "warnings": []
+              },
+              "confidence": "high",
+              "source": "site_context.get_area_info"
+            },
+            "timezone": {
+              "confidence": "high",
+              "source": "timezonefinder",
+              "tz_name": "Europe/Zurich",
+              "value": 1.0
+            },
+            "z": {
+              "confidence": "medium",
+              "source": "forcing_height_assumption",
+              "value": 10.0
+            },
+            "z0m_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption",
+              "value": 1.0
+            },
+            "zdm_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption"
+            }
+          },
+          "units": {
+            "alt": "m",
+            "lat": "degrees",
+            "lng": "degrees",
+            "surfacearea": "m2",
+            "timezone": "hours_utc_offset",
+            "z": "m",
+            "z0m_in": "m",
+            "zdm_in": "m"
+          },
+          "values": {
+            "alt": 0.0,
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "narp_trans_site": 1.0,
+            "pipecapacity": 100.0,
+            "runofftowater": 0.0,
+            "surfacearea": 78413712.2636475,
+            "timezone": 1.0,
+            "z": 10.0,
+            "z0m_in": 1.0,
+            "zdm_in": 3.0
+          },
+          "warnings": [
+            "No altitude source was available; using altitude 0.0.",
+            "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+            "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+            "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+          ]
+        },
+        "suews_fractions": {},
+        "warnings": [
+          "No altitude source was available; using altitude 0.0.",
+          "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+          "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+          "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+        ]
+      },
+      "request": {
+        "admin_preferred_levels": [
+          "ADM3",
+          "ADM2",
+          "ADM1",
+          "ADM0"
+        ],
+        "fallback_mode": "bbox",
+        "include_admin": false,
+        "include_lcz": false,
+        "latitude": 47.5596,
+        "longitude": 7.5886,
+        "mode": "buffer",
+        "nearest_tolerance_km": 10.0,
+        "radius_meter": 5000
+      },
+      "scenario_id": "buffer_geometry_only"
+    },
+    {
+      "contract_version": "site_context_app_v1",
+      "expected": {
+        "administrative_context": {
+          "admin_level": "ADM3",
+          "country": "Switzerland",
+          "country_iso3": "CHE",
+          "error": null,
+          "metadata": {
+            "fixture": true,
+            "preferred_levels": [
+              "ADM3",
+              "ADM2",
+              "ADM1",
+              "ADM0"
+            ]
+          },
+          "name": "Fixture Admin",
+          "polygon_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.63,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.53
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "source": "m5c1_test_fixture",
+          "status": "contains"
+        },
+        "area": {
+          "area_unit": "m2",
+          "effective_mode": "admin",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "metric_crs_for_area": "EPSG:32632",
+          "requested_area_m2": 40141924.12465242,
+          "requested_matches_effective": true,
+          "requested_mode": "admin",
+          "surfacearea_m2_for_config": 40141924.12465242,
+          "warnings": []
+        },
+        "capabilities": {
+          "admin": {
+            "message": null,
+            "status": "available"
+          },
+          "geometry": {
+            "message": null,
+            "status": "available"
+          },
+          "lcz": {
+            "message": "LCZ resolution was not requested.",
+            "status": "unavailable"
+          },
+          "site_properties": {
+            "message": null,
+            "status": "partial"
+          },
+          "suews_fractions": {
+            "message": "SUEWS fractions require a resolved LCZ source.",
+            "status": "unavailable"
+          }
+        },
+        "errors": [],
+        "geometry": {
+          "crs": "EPSG:4326",
+          "effective_geometry_crs": "EPSG:4326",
+          "effective_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.63,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.53
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "effective_mode": "admin",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "point_geojson": {
+            "coordinates": [
+              7.5886,
+              47.5596
+            ],
+            "type": "Point"
+          },
+          "radius_meter": 5000.0,
+          "radius_semantics": "radius_meter does not define the administrative polygon; it is used by the fallback local geometry if admin lookup fails.",
+          "requested_geometry_available": true,
+          "requested_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.63,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.59
+                ],
+                [
+                  7.55,
+                  47.53
+                ],
+                [
+                  7.63,
+                  47.53
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "requested_matches_effective": true,
+          "requested_mode": "admin"
+        },
+        "input": {
+          "fallback_mode": "bbox",
+          "include_admin": false,
+          "include_lcz": false,
+          "latitude": 47.5596,
+          "longitude": 7.5886,
+          "radius_meter": 5000,
+          "radius_unit": "m",
+          "requested_mode": "admin"
+        },
+        "lcz": {},
+        "metadata": {
+          "adapter": "SuewsSiteContextAdapter",
+          "contract_version": "site_context_app_v1",
+          "generated_at_utc": "2026-09-12T00:00:00+00:00"
+        },
+        "provenance": {
+          "admin_source": "SuewsSiteContext.get_admin_info",
+          "area_source": "SuewsSiteContext.get_area_info",
+          "dec_0024_boundary": "Dynamic site-context outputs are not inputs to Basel rc5 surrogate inference.",
+          "fixed_surrogate_runtime_dependency": false,
+          "lcz_source": null,
+          "site_context_class": "site_context.core.SuewsSiteContext",
+          "site_property_source": "SuewsSiteContext.get_site_properties_for_suews",
+          "suews_fraction_source": null
+        },
+        "site_properties": {
+          "provenance": {
+            "alt": {
+              "confidence": "low",
+              "source": "fallback",
+              "value": 0.0
+            },
+            "lat": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "lng": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "narp_trans_site": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "pipecapacity": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "runofftowater": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "surfacearea": {
+              "area_info": {
+                "admin_info": {
+                  "admin_level": "ADM3",
+                  "country": "Switzerland",
+                  "country_iso3": "CHE",
+                  "error": null,
+                  "metadata": {
+                    "fixture": true,
+                    "preferred_levels": [
+                      "ADM3",
+                      "ADM2",
+                      "ADM1",
+                      "ADM0"
+                    ]
+                  },
+                  "name": "Fixture Admin",
+                  "polygon_geojson": {
+                    "coordinates": [
+                      [
+                        [
+                          7.63,
+                          47.53
+                        ],
+                        [
+                          7.63,
+                          47.59
+                        ],
+                        [
+                          7.55,
+                          47.59
+                        ],
+                        [
+                          7.55,
+                          47.53
+                        ],
+                        [
+                          7.63,
+                          47.53
+                        ]
+                      ]
+                    ],
+                    "type": "Polygon"
+                  },
+                  "source": "m5c1_test_fixture",
+                  "status": "contains"
+                },
+                "effective_geometry_crs": "EPSG:4326",
+                "effective_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.63,
+                        47.53
+                      ],
+                      [
+                        7.63,
+                        47.59
+                      ],
+                      [
+                        7.55,
+                        47.59
+                      ],
+                      [
+                        7.55,
+                        47.53
+                      ],
+                      [
+                        7.63,
+                        47.53
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "effective_mode": "admin",
+                "fallback_mode": "bbox",
+                "fallback_reason": null,
+                "fallback_used": false,
+                "metric_crs_for_area": "EPSG:32632",
+                "requested_area_m2": 40141924.12465242,
+                "requested_geometry_available": true,
+                "requested_geometry_crs": "EPSG:4326",
+                "requested_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.63,
+                        47.53
+                      ],
+                      [
+                        7.63,
+                        47.59
+                      ],
+                      [
+                        7.55,
+                        47.59
+                      ],
+                      [
+                        7.55,
+                        47.53
+                      ],
+                      [
+                        7.63,
+                        47.53
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "requested_matches_effective": true,
+                "requested_mode": "admin",
+                "spatial_provenance": {
+                  "admin_info": {
+                    "admin_level": "ADM3",
+                    "country": "Switzerland",
+                    "country_iso3": "CHE",
+                    "error": null,
+                    "metadata": {
+                      "fixture": true,
+                      "preferred_levels": [
+                        "ADM3",
+                        "ADM2",
+                        "ADM1",
+                        "ADM0"
+                      ]
+                    },
+                    "name": "Fixture Admin",
+                    "polygon_geojson": {
+                      "coordinates": [
+                        [
+                          [
+                            7.63,
+                            47.53
+                          ],
+                          [
+                            7.63,
+                            47.59
+                          ],
+                          [
+                            7.55,
+                            47.59
+                          ],
+                          [
+                            7.55,
+                            47.53
+                          ],
+                          [
+                            7.63,
+                            47.53
+                          ]
+                        ]
+                      ],
+                      "type": "Polygon"
+                    },
+                    "source": "m5c1_test_fixture",
+                    "status": "contains"
+                  },
+                  "effective_mode": "admin",
+                  "fallback_mode": "bbox",
+                  "fallback_reason": null,
+                  "fallback_used": false,
+                  "requested_matches_effective": true,
+                  "requested_mode": "admin",
+                  "warnings": []
+                },
+                "surfacearea_m2_for_config": 40141924.12465242,
+                "warnings": []
+              },
+              "confidence": "high",
+              "source": "site_context.get_area_info"
+            },
+            "timezone": {
+              "confidence": "high",
+              "source": "timezonefinder",
+              "tz_name": "Europe/Zurich",
+              "value": 1.0
+            },
+            "z": {
+              "confidence": "medium",
+              "source": "forcing_height_assumption",
+              "value": 10.0
+            },
+            "z0m_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption",
+              "value": 1.0
+            },
+            "zdm_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption"
+            }
+          },
+          "units": {
+            "alt": "m",
+            "lat": "degrees",
+            "lng": "degrees",
+            "surfacearea": "m2",
+            "timezone": "hours_utc_offset",
+            "z": "m",
+            "z0m_in": "m",
+            "zdm_in": "m"
+          },
+          "values": {
+            "alt": 0.0,
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "narp_trans_site": 1.0,
+            "pipecapacity": 100.0,
+            "runofftowater": 0.0,
+            "surfacearea": 40141924.12465242,
+            "timezone": 1.0,
+            "z": 10.0,
+            "z0m_in": 1.0,
+            "zdm_in": 3.0
+          },
+          "warnings": [
+            "No altitude source was available; using altitude 0.0.",
+            "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+            "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+            "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+          ]
+        },
+        "suews_fractions": {},
+        "warnings": [
+          "No altitude source was available; using altitude 0.0.",
+          "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+          "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+          "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+        ]
+      },
+      "request": {
+        "admin_preferred_levels": [
+          "ADM3",
+          "ADM2",
+          "ADM1",
+          "ADM0"
+        ],
+        "fallback_mode": "bbox",
+        "include_admin": false,
+        "include_lcz": false,
+        "latitude": 47.5596,
+        "longitude": 7.5886,
+        "mode": "admin",
+        "nearest_tolerance_km": 10.0,
+        "radius_meter": 5000
+      },
+      "scenario_id": "admin_success_fixture"
+    },
+    {
+      "contract_version": "site_context_app_v1",
+      "expected": {
+        "administrative_context": {
+          "admin_level": null,
+          "country": null,
+          "country_iso3": null,
+          "error": "m5c1 deterministic admin failure",
+          "metadata": {
+            "fixture": true,
+            "preferred_levels": [
+              "ADM3",
+              "ADM2",
+              "ADM1",
+              "ADM0"
+            ]
+          },
+          "name": null,
+          "polygon_geojson": null,
+          "source": null,
+          "status": "failed"
+        },
+        "area": {
+          "area_unit": "m2",
+          "effective_mode": "bbox",
+          "fallback_reason": "Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+          "fallback_used": true,
+          "metric_crs_for_area": "EPSG:32632",
+          "requested_area_m2": null,
+          "requested_matches_effective": false,
+          "requested_mode": "admin",
+          "surfacearea_m2_for_config": 100005561.12962262,
+          "warnings": [
+            "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'"
+          ]
+        },
+        "capabilities": {
+          "admin": {
+            "message": "Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+            "status": "failed"
+          },
+          "geometry": {
+            "message": null,
+            "status": "available"
+          },
+          "lcz": {
+            "message": "LCZ resolution was not requested.",
+            "status": "unavailable"
+          },
+          "site_properties": {
+            "message": null,
+            "status": "partial"
+          },
+          "suews_fractions": {
+            "message": "SUEWS fractions require a resolved LCZ source.",
+            "status": "unavailable"
+          }
+        },
+        "errors": [],
+        "geometry": {
+          "crs": "EPSG:4326",
+          "effective_geometry_crs": "EPSG:4326",
+          "effective_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "effective_mode": "bbox",
+          "fallback_reason": "Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+          "fallback_used": true,
+          "point_geojson": {
+            "coordinates": [
+              7.5886,
+              47.5596
+            ],
+            "type": "Point"
+          },
+          "radius_meter": 5000.0,
+          "radius_semantics": "radius_meter does not define the administrative polygon; it is used by the fallback local geometry if admin lookup fails.",
+          "requested_geometry_available": false,
+          "requested_geometry_geojson": null,
+          "requested_matches_effective": false,
+          "requested_mode": "admin"
+        },
+        "input": {
+          "fallback_mode": "bbox",
+          "include_admin": false,
+          "include_lcz": false,
+          "latitude": 47.5596,
+          "longitude": 7.5886,
+          "radius_meter": 5000,
+          "radius_unit": "m",
+          "requested_mode": "admin"
+        },
+        "lcz": {},
+        "metadata": {
+          "adapter": "SuewsSiteContextAdapter",
+          "contract_version": "site_context_app_v1",
+          "generated_at_utc": "2026-09-12T00:00:00+00:00"
+        },
+        "provenance": {
+          "admin_source": "SuewsSiteContext.get_admin_info",
+          "area_source": "SuewsSiteContext.get_area_info",
+          "dec_0024_boundary": "Dynamic site-context outputs are not inputs to Basel rc5 surrogate inference.",
+          "fixed_surrogate_runtime_dependency": false,
+          "lcz_source": null,
+          "site_context_class": "site_context.core.SuewsSiteContext",
+          "site_property_source": "SuewsSiteContext.get_site_properties_for_suews",
+          "suews_fraction_source": null
+        },
+        "site_properties": {
+          "provenance": {
+            "alt": {
+              "confidence": "low",
+              "source": "fallback",
+              "value": 0.0
+            },
+            "lat": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "lng": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "narp_trans_site": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "pipecapacity": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "runofftowater": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "surfacearea": {
+              "area_info": {
+                "admin_info": {
+                  "admin_level": null,
+                  "country": null,
+                  "country_iso3": null,
+                  "error": "m5c1 deterministic admin failure",
+                  "metadata": {
+                    "fixture": true,
+                    "preferred_levels": [
+                      "ADM3",
+                      "ADM2",
+                      "ADM1",
+                      "ADM0"
+                    ]
+                  },
+                  "name": null,
+                  "polygon_geojson": null,
+                  "source": null,
+                  "status": "failed"
+                },
+                "effective_geometry_crs": "EPSG:4326",
+                "effective_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "effective_mode": "bbox",
+                "fallback_mode": "bbox",
+                "fallback_reason": "Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+                "fallback_used": true,
+                "metric_crs_for_area": "EPSG:32632",
+                "requested_area_m2": null,
+                "requested_geometry_available": false,
+                "requested_geometry_crs": null,
+                "requested_geometry_geojson": null,
+                "requested_matches_effective": false,
+                "requested_mode": "admin",
+                "spatial_provenance": {
+                  "admin_info": {
+                    "admin_level": null,
+                    "country": null,
+                    "country_iso3": null,
+                    "error": "m5c1 deterministic admin failure",
+                    "metadata": {
+                      "fixture": true,
+                      "preferred_levels": [
+                        "ADM3",
+                        "ADM2",
+                        "ADM1",
+                        "ADM0"
+                      ]
+                    },
+                    "name": null,
+                    "polygon_geojson": null,
+                    "source": null,
+                    "status": "failed"
+                  },
+                  "effective_mode": "bbox",
+                  "fallback_mode": "bbox",
+                  "fallback_reason": "Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+                  "fallback_used": true,
+                  "requested_matches_effective": false,
+                  "requested_mode": "admin",
+                  "warnings": [
+                    "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'"
+                  ]
+                },
+                "surfacearea_m2_for_config": 100005561.12962262,
+                "warnings": [
+                  "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'"
+                ]
+              },
+              "confidence": "high",
+              "source": "site_context.get_area_info"
+            },
+            "timezone": {
+              "confidence": "high",
+              "source": "timezonefinder",
+              "tz_name": "Europe/Zurich",
+              "value": 1.0
+            },
+            "z": {
+              "confidence": "medium",
+              "source": "forcing_height_assumption",
+              "value": 10.0
+            },
+            "z0m_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption",
+              "value": 1.0
+            },
+            "zdm_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption"
+            }
+          },
+          "units": {
+            "alt": "m",
+            "lat": "degrees",
+            "lng": "degrees",
+            "surfacearea": "m2",
+            "timezone": "hours_utc_offset",
+            "z": "m",
+            "z0m_in": "m",
+            "zdm_in": "m"
+          },
+          "values": {
+            "alt": 0.0,
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "narp_trans_site": 1.0,
+            "pipecapacity": 100.0,
+            "runofftowater": 0.0,
+            "surfacearea": 100005561.12962262,
+            "timezone": 1.0,
+            "z": 10.0,
+            "z0m_in": 1.0,
+            "zdm_in": 3.0
+          },
+          "warnings": [
+            "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+            "No altitude source was available; using altitude 0.0.",
+            "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+            "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+            "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+          ]
+        },
+        "suews_fractions": {},
+        "warnings": [
+          "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+          "Falling back to 'bbox' because: Administrative polygon was not available. status='failed'; error='m5c1 deterministic admin failure'",
+          "No altitude source was available; using altitude 0.0.",
+          "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+          "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+          "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+        ]
+      },
+      "request": {
+        "admin_preferred_levels": [
+          "ADM3",
+          "ADM2",
+          "ADM1",
+          "ADM0"
+        ],
+        "fallback_mode": "bbox",
+        "include_admin": false,
+        "include_lcz": false,
+        "latitude": 47.5596,
+        "longitude": 7.5886,
+        "mode": "admin",
+        "nearest_tolerance_km": 10.0,
+        "radius_meter": 5000
+      },
+      "scenario_id": "admin_fallback_to_bbox_fixture"
+    },
+    {
+      "contract_version": "site_context_app_v1",
+      "expected": {
+        "administrative_context": {
+          "admin_level": null,
+          "country": null,
+          "country_iso3": null,
+          "error": null,
+          "metadata": {},
+          "name": null,
+          "polygon_geojson": null,
+          "source": null,
+          "status": "not_requested"
+        },
+        "area": {
+          "area_unit": "m2",
+          "effective_mode": "bbox",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "metric_crs_for_area": "EPSG:32632",
+          "requested_area_m2": 100005561.12962262,
+          "requested_matches_effective": true,
+          "requested_mode": "bbox",
+          "surfacearea_m2_for_config": 100005561.12962262,
+          "warnings": []
+        },
+        "capabilities": {
+          "admin": {
+            "message": "Administrative lookup was not requested.",
+            "status": "unavailable"
+          },
+          "geometry": {
+            "message": null,
+            "status": "available"
+          },
+          "lcz": {
+            "message": "LCZ was requested, but no LCZ raster source was configured.",
+            "status": "unavailable"
+          },
+          "site_properties": {
+            "message": null,
+            "status": "partial"
+          },
+          "suews_fractions": {
+            "message": "SUEWS fractions require a resolved LCZ source.",
+            "status": "unavailable"
+          }
+        },
+        "errors": [],
+        "geometry": {
+          "crs": "EPSG:4326",
+          "effective_geometry_crs": "EPSG:4326",
+          "effective_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "effective_mode": "bbox",
+          "fallback_reason": null,
+          "fallback_used": false,
+          "point_geojson": {
+            "coordinates": [
+              7.5886,
+              47.5596
+            ],
+            "type": "Point"
+          },
+          "radius_meter": 5000.0,
+          "radius_semantics": "radius_meter is the square half-size in metres.",
+          "requested_geometry_available": true,
+          "requested_geometry_geojson": {
+            "coordinates": [
+              [
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.604515558749554
+                ],
+                [
+                  7.5220409697834825,
+                  47.51468444125045
+                ],
+                [
+                  7.655159030216517,
+                  47.51468444125045
+                ]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "requested_matches_effective": true,
+          "requested_mode": "bbox"
+        },
+        "input": {
+          "fallback_mode": "bbox",
+          "include_admin": false,
+          "include_lcz": true,
+          "latitude": 47.5596,
+          "longitude": 7.5886,
+          "radius_meter": 5000,
+          "radius_unit": "m",
+          "requested_mode": "bbox"
+        },
+        "lcz": {},
+        "metadata": {
+          "adapter": "SuewsSiteContextAdapter",
+          "contract_version": "site_context_app_v1",
+          "generated_at_utc": "2026-09-12T00:00:00+00:00"
+        },
+        "provenance": {
+          "admin_source": "SuewsSiteContext.get_admin_info",
+          "area_source": "SuewsSiteContext.get_area_info",
+          "dec_0024_boundary": "Dynamic site-context outputs are not inputs to Basel rc5 surrogate inference.",
+          "fixed_surrogate_runtime_dependency": false,
+          "lcz_source": "LandCoverClient.get_lcz",
+          "site_context_class": "site_context.core.SuewsSiteContext",
+          "site_property_source": "SuewsSiteContext.get_site_properties_for_suews",
+          "suews_fraction_source": null
+        },
+        "site_properties": {
+          "provenance": {
+            "alt": {
+              "confidence": "low",
+              "source": "fallback",
+              "value": 0.0
+            },
+            "lat": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "lng": {
+              "confidence": "high",
+              "source": "site_context"
+            },
+            "narp_trans_site": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "pipecapacity": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "runofftowater": {
+              "confidence": "medium",
+              "source": "fallback"
+            },
+            "surfacearea": {
+              "area_info": {
+                "admin_info": {
+                  "admin_level": null,
+                  "country": null,
+                  "country_iso3": null,
+                  "error": null,
+                  "metadata": {},
+                  "name": null,
+                  "polygon_geojson": null,
+                  "source": null,
+                  "status": "not_requested"
+                },
+                "effective_geometry_crs": "EPSG:4326",
+                "effective_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "effective_mode": "bbox",
+                "fallback_mode": "bbox",
+                "fallback_reason": null,
+                "fallback_used": false,
+                "metric_crs_for_area": "EPSG:32632",
+                "requested_area_m2": 100005561.12962262,
+                "requested_geometry_available": true,
+                "requested_geometry_crs": "EPSG:4326",
+                "requested_geometry_geojson": {
+                  "coordinates": [
+                    [
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.604515558749554
+                      ],
+                      [
+                        7.5220409697834825,
+                        47.51468444125045
+                      ],
+                      [
+                        7.655159030216517,
+                        47.51468444125045
+                      ]
+                    ]
+                  ],
+                  "type": "Polygon"
+                },
+                "requested_matches_effective": true,
+                "requested_mode": "bbox",
+                "spatial_provenance": {
+                  "admin_info": {
+                    "admin_level": null,
+                    "country": null,
+                    "country_iso3": null,
+                    "error": null,
+                    "metadata": {},
+                    "name": null,
+                    "polygon_geojson": null,
+                    "source": null,
+                    "status": "not_requested"
+                  },
+                  "effective_mode": "bbox",
+                  "fallback_mode": "bbox",
+                  "fallback_reason": null,
+                  "fallback_used": false,
+                  "requested_matches_effective": true,
+                  "requested_mode": "bbox",
+                  "warnings": []
+                },
+                "surfacearea_m2_for_config": 100005561.12962262,
+                "warnings": []
+              },
+              "confidence": "high",
+              "source": "site_context.get_area_info"
+            },
+            "timezone": {
+              "confidence": "high",
+              "source": "timezonefinder",
+              "tz_name": "Europe/Zurich",
+              "value": 1.0
+            },
+            "z": {
+              "confidence": "medium",
+              "source": "forcing_height_assumption",
+              "value": 10.0
+            },
+            "z0m_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption",
+              "value": 1.0
+            },
+            "zdm_in": {
+              "confidence": "low",
+              "source": "fallback_morphology_assumption"
+            }
+          },
+          "units": {
+            "alt": "m",
+            "lat": "degrees",
+            "lng": "degrees",
+            "surfacearea": "m2",
+            "timezone": "hours_utc_offset",
+            "z": "m",
+            "z0m_in": "m",
+            "zdm_in": "m"
+          },
+          "values": {
+            "alt": 0.0,
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "narp_trans_site": 1.0,
+            "pipecapacity": 100.0,
+            "runofftowater": 0.0,
+            "surfacearea": 100005561.12962262,
+            "timezone": 1.0,
+            "z": 10.0,
+            "z0m_in": 1.0,
+            "zdm_in": 3.0
+          },
+          "warnings": [
+            "No altitude source was available; using altitude 0.0.",
+            "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+            "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+            "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency."
+          ]
+        },
+        "suews_fractions": {},
+        "warnings": [
+          "No altitude source was available; using altitude 0.0.",
+          "Using default meteorological forcing height. This z value represents forcing measurement height, not urban morphology or building height.",
+          "Using fallback z0m_in morphology assumption; provide roughness length or morphology-derived values for stronger physical consistency.",
+          "zdm_in is a morphology fallback. It was not derived from meteoblue Roughness Length; use LCZ/OSM/DSM or a morphometric method for stronger physical consistency.",
+          "LCZ was requested, but no LCZ raster source was configured."
+        ]
+      },
+      "request": {
+        "admin_preferred_levels": [
+          "ADM3",
+          "ADM2",
+          "ADM1",
+          "ADM0"
+        ],
+        "fallback_mode": "bbox",
+        "include_admin": false,
+        "include_lcz": true,
+        "latitude": 47.5596,
+        "longitude": 7.5886,
+        "mode": "bbox",
+        "nearest_tolerance_km": 10.0,
+        "radius_meter": 5000
+      },
+      "scenario_id": "lcz_unavailable_request"
+    }
+  ],
+  "source": "SuewsSiteContextAdapter private scientific reference, serialized through SiteContextResult.to_dict()"
+}
